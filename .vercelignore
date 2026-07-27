@@ -1,0 +1,24 @@
+# Qué NO se sube al despliegue.
+#
+# OJO: el CLI de Vercel NO lee .gitignore. Si un archivo solo está en
+# .gitignore pero no aquí, `vercel deploy` lo sube igual y queda público.
+# Todo lo que no deba servirse tiene que estar en ESTE archivo.
+
+# Material fuente: fotos originales y referencias de branding.
+# Pesa ~15 MB y no tiene por qué ser accesible desde internet.
+fotos productos/
+recursos ejemplo/
+loos Order express  Opm Shop/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Git
+.git/
+.gitignore
