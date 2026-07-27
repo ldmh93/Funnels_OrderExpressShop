@@ -1,0 +1,581 @@
+/* ==========================================================================
+   OEM SHOP · components.css
+   Piezas reutilizables: botones, tarjetas, badges, encabezados de sección,
+   formas orgánicas y separadores de onda.
+   Depende de variables.css.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. BOTONES
+   ========================================================================== */
+
+.btn {
+  --btn-py: 0.95em;
+  --btn-px: 2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65em;
+  padding: var(--btn-py) var(--btn-px);
+  border: 2px solid transparent;
+  border-radius: var(--r-pill);
+  font-family: var(--f-texto);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform var(--d-media) var(--e-rebote),
+    box-shadow var(--d-media) var(--e-suave),
+    background var(--d-media) var(--e-suave),
+    color var(--d-media) var(--e-suave),
+    border-color var(--d-media) var(--e-suave);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--c-rosa-claro);
+  outline-offset: 3px;
+}
+
+.btn__icono {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  transition: transform var(--d-media) var(--e-rebote);
+}
+
+.btn:hover .btn__icono {
+  transform: translateX(3px);
+}
+
+/* --- Primario: el CTA de conversión, siempre fucsia ---------------------- */
+.btn--primario {
+  background: var(--g-rosa);
+  color: var(--c-blanco);
+  box-shadow: var(--s-rosa);
+}
+
+.btn--primario:hover {
+  background: var(--g-rosa-hover);
+  box-shadow: var(--s-rosa-hover);
+  transform: translateY(-3px);
+}
+
+.btn--primario:active {
+  transform: translateY(-1px);
+}
+
+/* Brillo que recorre el botón al pasar el cursor */
+.btn--primario {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn--primario::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -60%;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.42),
+    transparent
+  );
+  transform: skewX(-18deg);
+  transition: left var(--d-lenta) var(--e-suave);
+  z-index: -1;
+}
+
+.btn--primario:hover::after {
+  left: 120%;
+}
+
+/* --- Secundario: contorno claro, para fondos oscuros -------------------- */
+.btn--secundario {
+  background: transparent;
+  color: var(--c-blanco);
+  border-color: rgba(255, 255, 255, 0.42);
+}
+
+.btn--secundario:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--c-blanco);
+  transform: translateY(-3px);
+}
+
+/* --- Fantasma: contorno azul, para fondos claros ------------------------ */
+.btn--fantasma {
+  background: transparent;
+  color: var(--c-azul);
+  border-color: rgba(38, 40, 88, 0.22);
+}
+
+.btn--fantasma:hover {
+  background: var(--c-azul);
+  color: var(--c-blanco);
+  border-color: var(--c-azul);
+  transform: translateY(-3px);
+}
+
+/* --- Claro: blanco sólido, para fondos fucsia --------------------------- */
+.btn--claro {
+  background: var(--c-blanco);
+  color: var(--c-rosa);
+  box-shadow: var(--s-md);
+}
+
+.btn--claro:hover {
+  color: var(--c-rosa-oscuro);
+  box-shadow: var(--s-lg);
+  transform: translateY(-3px);
+}
+
+/* --- Tamaños ------------------------------------------------------------ */
+.btn--grande {
+  --btn-py: 1.15em;
+  --btn-px: 2.6em;
+  font-size: clamp(1rem, 0.94rem + 0.3vw, 1.15rem);
+  font-weight: 700;
+}
+
+.btn--bloque {
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. BADGES / PÍLDORAS
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.1em;
+  border-radius: var(--r-pill);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge--rosa {
+  background: var(--c-rosa);
+  color: var(--c-blanco);
+}
+
+.badge--claro {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--c-blanco);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.badge--crema {
+  background: var(--c-blanco);
+  color: var(--c-rosa);
+  box-shadow: var(--s-sm);
+}
+
+.badge__punto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Punto que late suavemente (indicador de "envíos activos") */
+.badge__punto--vivo {
+  animation: latido 2.4s var(--e-suave) infinite;
+}
+
+@keyframes latido {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.75); }
+}
+
+/* ==========================================================================
+   3. ENCABEZADO DE SECCIÓN
+   ========================================================================== */
+
+.enc {
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+.enc--izq {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.enc__kicker {
+  display: inline-block;
+  margin-bottom: var(--sp-4);
+  font-family: var(--f-texto);
+  font-size: var(--t-sm);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-rosa);
+}
+
+.enc__titulo {
+  font-family: var(--f-display);
+  font-size: var(--t-h2);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.015em;
+  color: var(--c-azul);
+  text-wrap: balance;
+}
+
+.enc__texto {
+  margin-top: var(--sp-4);
+  font-size: var(--t-lead);
+  line-height: var(--lh-texto);
+  color: var(--c-texto-suave);
+  text-wrap: pretty;
+}
+
+/* Variante sobre fondo azul */
+.enc--inv .enc__titulo { color: var(--c-blanco); }
+.enc--inv .enc__texto { color: var(--c-texto-inv-suave); }
+.enc--inv .enc__kicker { color: var(--c-rosa-claro); }
+
+/* Variante sobre fondo fucsia */
+.enc--rosa .enc__titulo { color: var(--c-blanco); }
+.enc--rosa .enc__texto { color: rgba(255, 255, 255, 0.88); }
+.enc--rosa .enc__kicker { color: rgba(255, 255, 255, 0.8); }
+
+/* ==========================================================================
+   4. TARJETA DE VALOR (Tradición / Calidad / Delivery)
+   ========================================================================== */
+
+.valor {
+  position: relative;
+  padding: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  background: var(--c-blanco);
+  border-radius: var(--r-lg);
+  box-shadow: var(--s-md);
+  overflow: hidden;
+  transition: transform var(--d-media) var(--e-suave),
+    box-shadow var(--d-media) var(--e-suave);
+}
+
+.valor::before {
+  /* Onda decorativa suave en la esquina */
+  content: "";
+  position: absolute;
+  top: -58px;
+  right: -58px;
+  width: 150px;
+  height: 150px;
+  background: var(--c-crema-claro);
+  border-radius: var(--r-blob);
+  transition: transform var(--d-lenta) var(--e-suave);
+}
+
+.valor:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--s-lg);
+}
+
+.valor:hover::before {
+  transform: scale(1.25) rotate(20deg);
+}
+
+.valor__icono {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  margin-bottom: var(--sp-5);
+  border-radius: var(--r-md);
+  background: var(--g-rosa);
+  color: var(--c-blanco);
+  box-shadow: var(--s-rosa);
+}
+
+.valor__icono svg {
+  width: 30px;
+  height: 30px;
+}
+
+.valor__titulo {
+  position: relative;
+  margin-bottom: var(--sp-3);
+  font-family: var(--f-display);
+  font-size: var(--t-h3);
+  font-weight: 600;
+  color: var(--c-azul);
+}
+
+.valor__texto {
+  position: relative;
+  color: var(--c-texto-suave);
+  line-height: var(--lh-texto);
+}
+
+/* ==========================================================================
+   5. TARJETA DE PRODUCTO
+   ========================================================================== */
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-blanco);
+  border: 1px solid var(--c-borde);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform var(--d-media) var(--e-suave),
+    box-shadow var(--d-media) var(--e-suave),
+    border-color var(--d-media) var(--e-suave);
+}
+
+.producto:hover {
+  transform: translateY(-8px);
+  border-color: transparent;
+  box-shadow: var(--s-lg);
+}
+
+.producto__media {
+  position: relative;
+  background: var(--g-crema);
+  overflow: hidden;
+}
+
+.producto__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform var(--d-lenta) var(--e-suave);
+}
+
+.producto:hover .producto__img {
+  transform: scale(1.07) rotate(-2deg);
+}
+
+.producto__etiqueta {
+  position: absolute;
+  top: var(--sp-4);
+  left: var(--sp-4);
+  z-index: 2;
+}
+
+.producto__cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+}
+
+.producto__nombre {
+  margin-bottom: var(--sp-2);
+  font-family: var(--f-display);
+  font-size: 1.28rem;
+  font-weight: 600;
+  color: var(--c-azul);
+}
+
+.producto__desc {
+  margin-bottom: var(--sp-5);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--c-texto-suave);
+}
+
+.producto__pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-top: auto;
+}
+
+.producto__origen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--c-texto-suave);
+}
+
+.producto__origen svg {
+  width: 14px;
+  height: 14px;
+  color: var(--c-rosa);
+}
+
+.producto .btn {
+  --btn-py: 0.8em;
+  --btn-px: 1.5em;
+  font-size: var(--t-sm);
+}
+
+/* ==========================================================================
+   6. TARJETA DE TESTIMONIO
+   ========================================================================== */
+
+.testimonio {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 1.3rem + 1.4vw, 2.35rem);
+  background: var(--c-blanco);
+  border-radius: var(--r-lg);
+  box-shadow: var(--s-md);
+  transition: transform var(--d-media) var(--e-suave),
+    box-shadow var(--d-media) var(--e-suave);
+}
+
+.testimonio:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--s-lg);
+}
+
+.testimonio__estrellas {
+  display: flex;
+  gap: 3px;
+  margin-bottom: var(--sp-4);
+  color: var(--c-oro);
+}
+
+.testimonio__estrellas svg {
+  width: 18px;
+  height: 18px;
+}
+
+.testimonio__texto {
+  flex: 1;
+  margin-bottom: var(--sp-5);
+  font-size: 1.02rem;
+  line-height: var(--lh-texto);
+  color: var(--c-texto);
+}
+
+.testimonio__autor {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.testimonio__avatar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--g-rosa);
+  color: var(--c-blanco);
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.testimonio__nombre {
+  font-weight: 600;
+  color: var(--c-azul);
+  line-height: 1.3;
+}
+
+.testimonio__lugar {
+  font-size: var(--t-xs);
+  color: var(--c-texto-suave);
+}
+
+/* ==========================================================================
+   7. FORMAS ORGÁNICAS Y ONDAS
+   ========================================================================== */
+
+/* Mancha de color de fondo, decorativa */
+.blob {
+  position: absolute;
+  border-radius: var(--r-blob);
+  pointer-events: none;
+  z-index: var(--z-fondo);
+}
+
+.blob--rosa { background: var(--g-rosa); }
+.blob--crema { background: var(--c-crema); }
+.blob--azul { background: var(--c-azul-700); }
+
+/* Separador de onda entre secciones */
+.onda {
+  display: block;
+  width: 100%;
+  height: clamp(48px, 7vw, 104px);
+  pointer-events: none;
+}
+
+.onda svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   8. LISTA DE BENEFICIOS CON PALOMITA
+   ========================================================================== */
+
+.lista-check {
+  display: grid;
+  gap: var(--sp-3);
+  list-style: none;
+}
+
+.lista-check li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  line-height: var(--lh-media);
+}
+
+.lista-check svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--c-rosa-claro);
+}
+
+/* ==========================================================================
+   9. UTILIDADES
+   ========================================================================== */
+
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.saltar-al-contenido {
+  position: absolute;
+  top: -100px;
+  left: var(--sp-4);
+  z-index: var(--z-menu);
+  padding: 0.85em 1.4em;
+  background: var(--c-rosa);
+  color: var(--c-blanco);
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--d-media) var(--e-suave);
+}
+
+.saltar-al-contenido:focus {
+  top: var(--sp-4);
+}

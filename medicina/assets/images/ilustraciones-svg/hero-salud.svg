@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 880" role="img" aria-label="Ilustración de productos de salud y entrega OEPM Shop">
+  <defs>
+    <linearGradient id="hb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff2f7"/>
+      <stop offset="1" stop-color="#ffd9e7"/>
+    </linearGradient>
+    <linearGradient id="hm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff3d8a"/>
+      <stop offset="1" stop-color="#dd1766"/>
+    </linearGradient>
+    <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f3eef6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="880" fill="url(#hb)"/>
+
+  <!-- Pétalo orgánico del branding -->
+  <path d="M800 0v520C560 520 380 350 380 120 380 76 388 36 402 0Z" fill="url(#hm)" opacity=".92"/>
+  <circle cx="150" cy="742" r="210" fill="#ffffff" opacity=".55"/>
+
+  <!-- Cápsulas -->
+  <g transform="translate(196 300) rotate(-24)">
+    <rect x="0" y="0" width="300" height="112" rx="56" fill="url(#hw)"/>
+    <path d="M56 0h94v112H56A56 56 0 0 1 56 0Z" fill="url(#hm)"/>
+    <rect x="0" y="0" width="300" height="112" rx="56" fill="none" stroke="#2b2a4a" stroke-opacity=".08" stroke-width="3"/>
+  </g>
+
+  <!-- Tabletas -->
+  <g>
+    <circle cx="255" cy="596" r="58" fill="#ffffff"/>
+    <path d="M197 596h116" stroke="#2b2a4a" stroke-opacity=".14" stroke-width="5"/>
+    <circle cx="392" cy="672" r="40" fill="#ffffff"/>
+    <path d="M352 672h80" stroke="#2b2a4a" stroke-opacity=".14" stroke-width="4"/>
+  </g>
+
+  <!-- Caja de envío con cruz de salud -->
+  <g transform="translate(430 540)">
+    <rect x="0" y="0" width="250" height="200" rx="22" fill="#ffffff" stroke="#2b2a4a" stroke-opacity=".08" stroke-width="3"/>
+    <rect x="0" y="0" width="250" height="52" rx="22" fill="#dd1766" opacity=".14"/>
+    <path d="M108 92h34v34h34v34h-34v34h-34v-34H74v-34h34z" fill="url(#hm)"/>
+  </g>
+
+  <!-- Franja diagonal -->
+  <g transform="skewX(-20)">
+    <rect x="612" y="600" width="70" height="300" rx="8" fill="#dd1766"/>
+  </g>
+</svg>

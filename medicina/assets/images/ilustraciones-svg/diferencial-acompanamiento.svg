@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 600" role="img" aria-label="Ilustración de atención personalizada y acompañamiento durante la compra">
+  <defs>
+    <linearGradient id="db" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff2f7"/>
+      <stop offset="1" stop-color="#ffe4ef"/>
+    </linearGradient>
+    <linearGradient id="dm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff3d8a"/>
+      <stop offset="1" stop-color="#dd1766"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="750" height="600" fill="url(#db)"/>
+  <path d="M750 0v420C560 400 430 260 448 90c4-33 12-64 24-90Z" fill="url(#dm)" opacity=".9"/>
+  <circle cx="118" cy="512" r="170" fill="#ffffff" opacity=".6"/>
+
+  <!-- Teléfono con chat de soporte -->
+  <g transform="translate(232 108)">
+    <rect x="0" y="0" width="286" height="420" rx="38" fill="#ffffff" stroke="#2b2a4a" stroke-opacity=".08" stroke-width="3"/>
+    <rect x="104" y="22" width="78" height="12" rx="6" fill="#2b2a4a" opacity=".12"/>
+    <rect x="30" y="70" width="170" height="46" rx="23" fill="#f3eef6"/>
+    <rect x="86" y="134" width="170" height="46" rx="23" fill="url(#dm)"/>
+    <rect x="30" y="198" width="140" height="46" rx="23" fill="#f3eef6"/>
+    <rect x="30" y="286" width="226" height="96" rx="24" fill="#ffffff" stroke="#ffd9e7" stroke-width="3"/>
+    <path d="M126 314h20v20h20v20h-20v20h-20v-20h-20v-20h20z" fill="url(#dm)"/>
+  </g>
+
+  <!-- Franja diagonal del branding -->
+  <g transform="skewX(-20)">
+    <rect x="596" y="330" width="62" height="300" rx="8" fill="#dd1766"/>
+  </g>
+</svg>

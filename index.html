@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funnels · Order Express Shop</title>
+<meta name="description" content="Índice de landing pages de campaña de Order Express Shop.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="dulces/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Poppins:wght@400;500;600;800&display=swap">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+
+  :root {
+    --azul: #262858;
+    --azul-900: #1a1b3d;
+    --rosa: #dd1766;
+    --rosa-claro: #ff5a9e;
+    --crema: #e5cfc1;
+    --texto-suave: #c8c9de;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(1.5rem, 1rem + 3vw, 4rem);
+    font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+    color: #fff;
+    background: linear-gradient(160deg, #2f3168 0%, var(--azul) 55%, var(--azul-900) 100%);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Forma orgánica de marca, decorativa */
+  .blob {
+    position: fixed;
+    top: -28%;
+    right: -14%;
+    width: min(72vw, 820px);
+    aspect-ratio: 1.3 / 1;
+    background: linear-gradient(135deg, var(--rosa) 0%, #d4126b 100%);
+    border-radius: 50% 50% 46% 54% / 58% 52% 48% 42%;
+    opacity: .5;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .envoltura {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 980px;
+  }
+
+  header { text-align: center; margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem); }
+
+  .marca {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 1.75rem;
+  }
+  .marca img { height: 42px; width: auto; display: block; }
+  .marca span {
+    font-size: .72rem; font-weight: 800; letter-spacing: .34em;
+    padding-left: .34em; line-height: 1;
+  }
+
+  h1 {
+    font-family: "Fredoka", "Segoe UI", sans-serif;
+    font-size: clamp(1.9rem, 1.3rem + 2.4vw, 2.9rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+  }
+
+  .subtitulo {
+    max-width: 46ch;
+    margin: 1rem auto 0;
+    color: var(--texto-suave);
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  .rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1.25rem, .8rem + 1.6vw, 2rem);
+  }
+
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 28px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .32s cubic-bezier(.22,.61,.36,1),
+                border-color .32s ease, background .32s ease,
+                box-shadow .32s ease;
+  }
+
+  .funnel:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, .12);
+    border-color: rgba(255, 255, 255, .3);
+    box-shadow: 0 26px 60px rgba(15, 16, 40, .5);
+  }
+
+  .funnel:focus-visible { outline: 3px solid var(--rosa-claro); outline-offset: 4px; }
+
+  .funnel__portada {
+    aspect-ratio: 16 / 10;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: var(--crema);
+    overflow: hidden;
+  }
+  .funnel__portada img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    filter: drop-shadow(0 14px 20px rgba(20,21,48,.28));
+  }
+  .funnel--medicina .funnel__portada { background: #fdeef4; }
+
+  .funnel__cuerpo { padding: 1.6rem 1.5rem 1.75rem; display: flex; flex-direction: column; flex: 1; }
+
+  .etiqueta {
+    align-self: flex-start;
+    padding: .4em 1em;
+    margin-bottom: .9rem;
+    border-radius: 999px;
+    background: var(--rosa);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .funnel h2 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+
+  .funnel p { color: var(--texto-suave); font-size: .93rem; line-height: 1.6; flex: 1; }
+
+  .funnel__ir {
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+    margin-top: 1.4rem;
+    font-weight: 600;
+    color: var(--rosa-claro);
+  }
+  .funnel__ir svg { width: 1.1em; height: 1.1em; transition: transform .3s cubic-bezier(.34,1.4,.64,1); }
+  .funnel:hover .funnel__ir svg { transform: translateX(4px); }
+
+  footer {
+    margin-top: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+    text-align: center;
+    font-size: .8rem;
+    color: rgba(200, 201, 222, .7);
+  }
+  footer a { color: var(--rosa-claro); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="blob" aria-hidden="true"></div>
+
+<div class="envoltura">
+
+  <header>
+    <span class="marca">
+      <img src="dulces/assets/logo/oem-shop-logo-blanco.svg" alt="Order Express Shop" width="258" height="72">
+      <span>SHOP</span>
+    </span>
+    <h1>Landing pages de campaña</h1>
+    <p class="subtitulo">
+      Cada funnel es el destino de un anuncio distinto. Los dos terminan
+      llevando al cliente a la tienda.
+    </p>
+  </header>
+
+  <main class="rejilla">
+
+    <a class="funnel funnel--dulces" href="dulces/">
+      <div class="funnel__portada">
+        <img src="dulces/assets/images/dulces-canasta.png"
+             alt="Canasta de dulces típicos michoacanos" loading="lazy">
+      </div>
+      <div class="funnel__cuerpo">
+        <span class="etiqueta">Dulces típicos</span>
+        <h2>El sabor de Michoacán</h2>
+        <p>
+          Dulces típicos michoacanos con envío a domicilio. Pensada para
+          tráfico de Instagram, Facebook y TikTok Ads.
+        </p>
+        <span class="funnel__ir">
+          Ver funnel
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4.5 12h14M13 6.5 18.5 12 13 17.5"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="funnel funnel--medicina" href="medicina/">
+      <div class="funnel__portada">
+        <img src="medicina/assets/logo/oepm-shop-isotipo.svg"
+             alt="Medicamentos y productos de salud" loading="lazy" style="max-height:120px">
+      </div>
+      <div class="funnel__cuerpo">
+        <span class="etiqueta">Salud y bienestar</span>
+        <h2>Medicamentos confiables</h2>
+        <p>
+          Productos farmacéuticos con envío a Estados Unidos, información
+          clara de cada producto y atención personalizada.
+        </p>
+        <span class="funnel__ir">
+          Ver funnel
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4.5 12h14M13 6.5 18.5 12 13 17.5"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    Tienda destino: <a href="https://nube-store-pi.vercel.app" rel="noopener">nube-store-pi.vercel.app</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

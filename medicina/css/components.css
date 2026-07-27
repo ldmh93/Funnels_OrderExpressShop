@@ -1,0 +1,634 @@
+/* =============================================================
+   OEPM SHOP · MEDICAMENTOS Y SALUD
+   components.css — Piezas reutilizables de la interfaz
+   Depende de: variables.css
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. BOTONES
+   Píldora sólida con sombra de color, tal como el botón del
+   post de referencia del branding.
+   ------------------------------------------------------------- */
+.btn {
+  --btn-bg: var(--c-magenta);
+  --btn-fg: var(--c-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 54px;
+  padding: 0.95rem 1.9rem;
+  border: 2px solid transparent;
+  border-radius: var(--r-pill);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;   /* la etiqueta nunca se parte en dos renglones */
+  cursor: pointer;
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-base), box-shadow var(--t-base),
+              background-color var(--t-fast), color var(--t-fast),
+              border-color var(--t-fast);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--c-ink);
+  outline-offset: 3px;
+}
+
+/* Brillo diagonal que cruza el botón al pasar el cursor */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -120%;
+  width: 55%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+  transform: skewX(-18deg);
+  transition: left 620ms var(--ease-out);
+  z-index: -1;
+}
+
+.btn:hover::after { left: 130%; }
+
+/* --- Variantes --- */
+.btn--primary {
+  background: var(--g-magenta);
+  box-shadow: var(--sh-magenta);
+}
+.btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-magenta-lg);
+}
+.btn--primary:active { transform: translateY(-1px); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--c-ink);
+  border-color: var(--c-magenta-100);
+}
+.btn--ghost:hover {
+  border-color: var(--c-magenta);
+  color: var(--c-magenta);
+  transform: translateY(-3px);
+  box-shadow: var(--sh-sm);
+}
+
+.btn--white {
+  background: var(--c-white);
+  color: var(--c-magenta);
+  box-shadow: var(--sh-md);
+}
+.btn--white:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-lg);
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn--outline-white:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--c-white);
+  transform: translateY(-3px);
+}
+
+.btn--lg {
+  min-height: 64px;
+  padding: 1.15rem 2.6rem;
+  font-size: 1.1rem;
+}
+
+.btn--block { width: 100%; }
+
+.btn__icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  transition: transform var(--t-base);
+}
+.btn:hover .btn__icon { transform: translateX(4px); }
+
+/* -------------------------------------------------------------
+   2. ETIQUETAS Y PÍLDORAS
+   ------------------------------------------------------------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.5rem 1rem;
+  border-radius: var(--r-pill);
+  background: var(--c-magenta-050);
+  color: var(--c-magenta);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.tag--light {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--c-white);
+  backdrop-filter: blur(6px);
+}
+
+.tag--ink {
+  background: rgba(43, 42, 74, 0.07);
+  color: var(--c-ink);
+}
+
+.tag__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse-dot 2.4s var(--ease-soft) infinite;
+}
+
+/* -------------------------------------------------------------
+   3. TARJETAS BASE
+   ------------------------------------------------------------- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-xs);
+  transition: transform var(--t-base), box-shadow var(--t-base),
+              border-color var(--t-base);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--c-magenta-100);
+  box-shadow: var(--sh-md);
+}
+
+/* --- Tarjeta de confianza --- */
+.trust-card {
+  padding: var(--sp-6) var(--sp-5) var(--sp-5);
+  overflow: hidden;
+}
+
+.trust-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -30% -45% auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--c-magenta-050);
+  transition: transform var(--t-slow);
+  z-index: var(--z-deco);
+}
+
+.trust-card:hover::before { transform: scale(1.5); }
+
+.trust-card > * { position: relative; z-index: var(--z-content); }
+
+.trust-card__title {
+  margin: var(--sp-4) 0 var(--sp-2);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+
+.trust-card__text {
+  color: var(--c-ink-500);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+/* --- Icono circular de marca --- */
+.icon-badge {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--r-petal);
+  background: var(--g-magenta);
+  color: var(--c-white);
+  box-shadow: var(--sh-magenta);
+  transition: transform var(--t-base), border-radius var(--t-base);
+}
+
+.card:hover .icon-badge,
+.step:hover .icon-badge {
+  transform: rotate(-6deg) scale(1.06);
+  border-radius: 8% 52% 52% 52%;
+}
+
+.icon-badge svg { width: 28px; height: 28px; }
+
+.icon-badge--sm { width: 44px; height: 44px; }
+.icon-badge--sm svg { width: 20px; height: 20px; }
+
+.icon-badge--soft {
+  background: var(--c-magenta-050);
+  color: var(--c-magenta);
+  box-shadow: none;
+}
+
+/* -------------------------------------------------------------
+   4. TARJETA DE PRODUCTO (catálogo)
+   ------------------------------------------------------------- */
+.product {
+  overflow: hidden;
+}
+
+.product__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--g-magenta-soft);
+}
+
+.product__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-out);
+}
+
+.product:hover .product__media img { transform: scale(1.07); }
+
+/* Franja diagonal del branding sobre la imagen */
+.product__media::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  bottom: -30px;
+  width: 74px;
+  height: 130px;
+  background: var(--c-magenta);
+  transform: skewX(-20deg);
+  opacity: 0.9;
+  transition: transform var(--t-slow);
+}
+
+.product:hover .product__media::after { transform: skewX(-20deg) translateY(-8px); }
+
+.product__flag {
+  position: absolute;
+  top: var(--sp-4);
+  left: var(--sp-4);
+  z-index: var(--z-content);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--r-pill);
+  background: var(--c-white);
+  color: var(--c-ink);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: var(--sh-xs);
+}
+
+.product__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: var(--sp-5);
+}
+
+.product__title {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+}
+
+.product__desc {
+  margin-top: var(--sp-2);
+  color: var(--c-ink-500);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+.product__benefits {
+  margin: var(--sp-4) 0 var(--sp-5);
+  display: grid;
+  gap: var(--sp-2);
+  list-style: none;
+}
+
+.product__benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--c-ink-700);
+}
+
+.product__benefits svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin-top: 2px;
+  color: var(--c-mint);
+}
+
+.product__footer { margin-top: auto; }
+
+/* -------------------------------------------------------------
+   5. PASOS DE ENVÍO
+   ------------------------------------------------------------- */
+.steps {
+  display: grid;
+  gap: var(--sp-5);
+  counter-reset: step;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  border-radius: var(--r-lg);
+  background: var(--c-white);
+  box-shadow: var(--sh-xs);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sh-md);
+}
+
+.step__num {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-5);
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--c-magenta);
+  opacity: 0.14;
+}
+
+.step__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.step__text {
+  margin-top: var(--sp-1);
+  color: var(--c-ink-500);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+/* -------------------------------------------------------------
+   6. ACORDEÓN DE PREGUNTAS FRECUENTES
+   ------------------------------------------------------------- */
+.faq {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.faq__item {
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  background: var(--c-white);
+  overflow: hidden;
+  transition: border-color var(--t-base), box-shadow var(--t-base);
+}
+
+.faq__item.is-open {
+  border-color: var(--c-magenta-100);
+  box-shadow: var(--sh-sm);
+}
+
+.faq__trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+  padding: var(--sp-5);
+  border: 0;
+  background: none;
+  color: var(--c-ink);
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq__trigger:focus-visible {
+  outline: 3px solid var(--c-magenta);
+  outline-offset: -3px;
+}
+
+.faq__sign {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: var(--c-magenta-050);
+  color: var(--c-magenta);
+  transition: transform var(--t-base), background-color var(--t-base),
+              color var(--t-base);
+}
+
+.faq__item.is-open .faq__sign {
+  transform: rotate(45deg);
+  background: var(--c-magenta);
+  color: var(--c-white);
+}
+
+.faq__sign svg { width: 16px; height: 16px; }
+
+.faq__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 380ms var(--ease-out);
+}
+
+.faq__item.is-open .faq__panel { grid-template-rows: 1fr; }
+
+.faq__panel > div { overflow: hidden; }
+
+.faq__panel p {
+  padding: 0 var(--sp-5) var(--sp-5);
+  color: var(--c-ink-500);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+/* -------------------------------------------------------------
+   7. TESTIMONIOS
+   ------------------------------------------------------------- */
+.testimonial {
+  padding: var(--sp-6) var(--sp-5) var(--sp-5);
+  border-radius: var(--r-lg);
+  background: var(--c-white);
+  box-shadow: var(--sh-xs);
+  border: 1px solid var(--c-line);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.testimonial:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-md);
+}
+
+.stars {
+  display: inline-flex;
+  gap: 3px;
+  color: var(--c-amber);
+}
+
+.stars svg { width: 18px; height: 18px; }
+
+.testimonial__text {
+  margin: var(--sp-4) 0 var(--sp-5);
+  color: var(--c-ink-700);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+.testimonial__person {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--g-magenta);
+  color: var(--c-white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.testimonial__name {
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+
+.testimonial__meta {
+  color: var(--c-ink-500);
+  font-size: var(--fs-xs);
+}
+
+/* -------------------------------------------------------------
+   8. FORMAS DECORATIVAS DEL BRANDING
+   Pétalos orgánicos + franjas diagonales.
+   ------------------------------------------------------------- */
+.blob {
+  position: absolute;
+  border-radius: var(--r-petal);
+  background: var(--g-magenta);
+  z-index: var(--z-deco);
+  pointer-events: none;
+}
+
+.blob--soft { background: var(--c-magenta-050); }
+
+.slash {
+  position: absolute;
+  background: var(--c-magenta);
+  transform: skewX(-20deg);
+  z-index: var(--z-deco);
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------
+   9. BARRA FIJA DE COMPRA (móvil) + WHATSAPP
+   ------------------------------------------------------------- */
+.buybar {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: var(--z-sticky);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0.7rem var(--gutter) calc(0.7rem + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--c-line);
+  transform: translateY(110%);
+  transition: transform var(--t-base);
+}
+
+.buybar.is-visible { transform: translateY(0); }
+
+.buybar__text {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--c-ink);
+}
+
+.buybar .btn { min-height: 46px; padding: 0.7rem 1.35rem; font-size: var(--fs-sm); }
+
+@media (min-width: 900px) {
+  .buybar { display: none; }
+}
+
+.wa-float {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(5.5rem, 12vw, 2rem);
+  z-index: var(--z-sticky);
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: var(--c-white);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.42);
+  transition: transform var(--t-base);
+}
+
+.wa-float:hover { transform: scale(1.08) translateY(-2px); }
+.wa-float svg { width: 28px; height: 28px; }
+
+@media (min-width: 900px) {
+  .wa-float { bottom: 2rem; }
+}
+
+/* -------------------------------------------------------------
+   10. AVISO LEGAL / NOTA RESPONSABLE
+   ------------------------------------------------------------- */
+.notice {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--r-md);
+  border: 1px dashed var(--c-magenta-100);
+  background: var(--c-magenta-050);
+  color: var(--c-ink-700);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-body);
+}
+
+.notice svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: var(--c-magenta);
+}

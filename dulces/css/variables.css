@@ -1,0 +1,123 @@
+/* ==========================================================================
+   OEM SHOP · variables.css
+   Tokens de diseño: color, tipografía, espaciado, radios, sombras y motion.
+   Único lugar donde se define la identidad visual. Cambiar aquí = cambiar
+   toda la landing.
+   ========================================================================== */
+
+:root {
+  /* ---------------------------------------------------------------- COLOR */
+  /* Azul profundo OEM — muestreado del post original (#262858) */
+  --c-azul: #262858;
+  --c-azul-900: #1a1b3d;
+  --c-azul-700: #2f3168;
+  --c-azul-500: #3d4084;
+  --c-azul-100: #d9dae8;
+
+  /* Rosa / fucsia vibrante — color de marca del logotipo (#dd1766) */
+  --c-rosa: #dd1766;
+  --c-rosa-oscuro: #b70f52;
+  --c-rosa-profundo: #d4126b; /* fucsia de las formas del post */
+  --c-rosa-claro: #ff5a9e;
+  --c-rosa-suave: #ffe4ef;
+
+  /* Beige crema — fondos cálidos y artesanales */
+  --c-crema: #e5cfc1;
+  --c-crema-claro: #f6ede5;
+  --c-crema-suave: #fbf6f1;
+
+  /* Neutros */
+  --c-blanco: #ffffff;
+  --c-texto: #24243f;
+  --c-texto-suave: #5c5c75;
+  --c-texto-inv: #ffffff;
+  --c-texto-inv-suave: #c8c9de;
+  --c-borde: rgba(38, 40, 88, 0.1);
+
+  /* Acento dorado para estrellas y detalles */
+  --c-oro: #f2b544;
+
+  /* --------------------------------------------------------- GRADIENTES */
+  --g-rosa: linear-gradient(135deg, var(--c-rosa) 0%, var(--c-rosa-profundo) 100%);
+  --g-rosa-hover: linear-gradient(135deg, var(--c-rosa-claro) 0%, var(--c-rosa) 100%);
+  --g-azul: linear-gradient(160deg, var(--c-azul-700) 0%, var(--c-azul) 55%, var(--c-azul-900) 100%);
+  --g-crema: linear-gradient(180deg, var(--c-crema-suave) 0%, var(--c-crema-claro) 100%);
+
+  /* -------------------------------------------------------- TIPOGRAFÍA */
+  --f-display: "Fredoka", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-texto: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Escala fluida: se adapta sola entre móvil y escritorio */
+  --t-hero: clamp(2.3rem, 1.35rem + 4.2vw, 4.4rem);
+  --t-h2: clamp(1.85rem, 1.2rem + 2.6vw, 3.05rem);
+  --t-h3: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  --t-lead: clamp(1.02rem, 0.95rem + 0.45vw, 1.28rem);
+  --t-base: clamp(0.95rem, 0.92rem + 0.16vw, 1.03rem);
+  --t-sm: 0.875rem;
+  --t-xs: 0.78rem;
+
+  --lh-tight: 1.06;
+  --lh-media: 1.32;
+  --lh-texto: 1.68;
+
+  /* ---------------------------------------------------------- ESPACIADO */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  /* Aire vertical de cada sección (fluido) */
+  --sp-seccion: clamp(3.75rem, 2rem + 7vw, 7.5rem);
+
+  /* ------------------------------------------------------------ LAYOUT */
+  --ancho-max: 1200px;
+  --ancho-texto: 62ch;
+  --padding-lateral: clamp(1.15rem, 0.6rem + 2.6vw, 2.5rem);
+  --header-alto: 74px;
+
+  /* ------------------------------------------------------------- RADIOS */
+  /* Formas curvas y orgánicas: todo generosamente redondeado */
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+  --r-pill: 999px;
+  /* Blob orgánico para imágenes destacadas */
+  --r-blob: 58% 42% 48% 52% / 52% 46% 54% 48%;
+
+  /* ------------------------------------------------------------ SOMBRAS */
+  --s-sm: 0 2px 8px rgba(38, 40, 88, 0.07);
+  --s-md: 0 10px 28px rgba(38, 40, 88, 0.1);
+  --s-lg: 0 22px 52px rgba(38, 40, 88, 0.14);
+  --s-xl: 0 34px 80px rgba(38, 40, 88, 0.2);
+  --s-rosa: 0 12px 30px rgba(221, 23, 102, 0.34);
+  --s-rosa-hover: 0 18px 40px rgba(221, 23, 102, 0.45);
+
+  /* ------------------------------------------------------------- MOTION */
+  --e-suave: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --e-rebote: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --d-rapida: 0.18s;
+  --d-media: 0.32s;
+  --d-lenta: 0.6s;
+
+  /* --------------------------------------------------------------- Z-INDEX */
+  --z-fondo: 0;
+  --z-contenido: 1;
+  --z-sticky: 50;
+  --z-header: 100;
+  --z-menu: 110;
+}
+
+/* Respeta la preferencia del sistema de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --d-rapida: 0.01ms;
+    --d-media: 0.01ms;
+    --d-lenta: 0.01ms;
+  }
+}

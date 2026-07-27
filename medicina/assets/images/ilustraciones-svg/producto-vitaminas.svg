@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Frasco de vitaminas y suplementos con cápsulas">
+  <defs>
+    <linearGradient id="pv-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2f7"/><stop offset="1" stop-color="#ffe4ef"/></linearGradient>
+    <linearGradient id="pv-m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3d8a"/><stop offset="1" stop-color="#dd1766"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#pv-b)"/>
+  <circle cx="128" cy="112" r="140" fill="url(#pv-m)" opacity=".14"/>
+  <g transform="translate(268 118)">
+    <rect x="52" y="0" width="160" height="58" rx="16" fill="#2b2a4a" opacity=".18"/>
+    <rect x="16" y="48" width="232" height="316" rx="34" fill="#ffffff" stroke="#2b2a4a" stroke-opacity=".08" stroke-width="3"/>
+    <rect x="16" y="150" width="232" height="132" fill="url(#pv-m)" opacity=".92"/>
+    <path d="M108 186h48v34h34v48h-34v34h-48v-34H74v-48h34z" fill="#ffffff" opacity=".92"/>
+  </g>
+  <g>
+    <circle cx="196" cy="470" r="46" fill="#ffffff"/><path d="M150 470h92" stroke="#2b2a4a" stroke-opacity=".14" stroke-width="5"/>
+    <g transform="translate(560 400) rotate(24)">
+      <rect x="0" y="0" width="150" height="60" rx="30" fill="#ffffff"/>
+      <path d="M30 0h45v60H30A30 30 0 0 1 30 0Z" fill="url(#pv-m)"/>
+    </g>
+  </g>
+  <g transform="skewX(-20)"><rect x="640" y="480" width="52" height="200" rx="6" fill="#dd1766"/></g>
+</svg>

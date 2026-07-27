@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- OEM Shop · Ate de membrillo y guayaba -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Ate de membrillo y guayaba en barras">
+  <defs>
+    <radialGradient id="at-bg" cx="34%" cy="24%" r="84%">
+      <stop offset="0" stop-color="#FBF4ED"/><stop offset="1" stop-color="#E2C9B7"/>
+    </radialGradient>
+    <linearGradient id="at-face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8447C"/><stop offset="1" stop-color="#B71350"/>
+    </linearGradient>
+    <linearGradient id="at-top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F86C9B"/><stop offset="1" stop-color="#D42C6C"/>
+    </linearGradient>
+    <linearGradient id="at-side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B71350"/><stop offset="1" stop-color="#8C0B3C"/>
+    </linearGradient>
+    <linearGradient id="at-face2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0A03E"/><stop offset="1" stop-color="#C96A15"/>
+    </linearGradient>
+    <linearGradient id="at-top2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFC06A"/><stop offset="1" stop-color="#E08424"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="160" cy="160" r="152" fill="url(#at-bg)"/>
+  <ellipse cx="160" cy="250" rx="106" ry="20" fill="#262858" opacity=".13"/>
+
+  <!-- Barra ámbar (guayaba) al fondo -->
+  <g>
+    <path d="M168 122l58-26 74 24-58 26z" fill="url(#at-top2)"/>
+    <path d="M168 122v56l74 24v-54z" fill="url(#at-face2)"/>
+    <path d="M242 148l58-26v54l-58 26z" fill="#A9560F"/>
+    <path d="M180 132l50 16" stroke="#FFE3B0" stroke-width="5" stroke-linecap="round" opacity=".4"/>
+  </g>
+
+  <!-- Barra rosa (membrillo) al frente -->
+  <g>
+    <path d="M40 168l62-30 92 28-62 30z" fill="url(#at-top)"/>
+    <path d="M40 168v58l92 28v-58z" fill="url(#at-face)"/>
+    <path d="M132 196l62-30v58l-62 30z" fill="url(#at-side)"/>
+    <!-- brillo del gel -->
+    <path d="M54 182l64 20" stroke="#FFC2D9" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+    <path d="M52 206l30 10" stroke="#FF9BC1" stroke-width="5" stroke-linecap="round" opacity=".4"/>
+    <!-- azúcar espolvoreada -->
+    <g fill="#FFF3F7" opacity=".8">
+      <circle cx="72" cy="158" r="2.4"/><circle cx="96" cy="152" r="2"/><circle cx="118" cy="160" r="2.6"/>
+      <circle cx="142" cy="166" r="2.2"/><circle cx="160" cy="176" r="2"/><circle cx="108" cy="146" r="1.8"/>
+    </g>
+  </g>
+
+  <!-- Rebanada delgada recargada al frente -->
+  <g transform="rotate(-14 76 226)">
+    <path d="M30 214l34-16 48 15-34 16z" fill="url(#at-top2)"/>
+    <path d="M30 214v20l48 15v-20z" fill="url(#at-face2)"/>
+    <path d="M78 229l34-16v20l-34 16z" fill="#A9560F"/>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- OEM Shop · Obleas (hostias artesanales de trigo) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Obleas artesanales de trigo">
+  <defs>
+    <radialGradient id="ob-bg" cx="34%" cy="24%" r="84%">
+      <stop offset="0" stop-color="#FBF4ED"/><stop offset="1" stop-color="#E2C9B7"/>
+    </radialGradient>
+    <linearGradient id="ob-face" x1=".2" y1="0" x2=".85" y2="1">
+      <stop offset="0" stop-color="#FEFAEF"/><stop offset=".55" stop-color="#F3E5C9"/><stop offset="1" stop-color="#DCC199"/>
+    </linearGradient>
+    <linearGradient id="ob-stack" x1=".2" y1="0" x2=".85" y2="1">
+      <stop offset="0" stop-color="#FBF3E2"/><stop offset="1" stop-color="#E4CDA6"/>
+    </linearGradient>
+    <pattern id="ob-mesh" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+      <path d="M0 7.5h15M7.5 0v15" stroke="#C4A165" stroke-width="1.5" opacity=".4"/>
+      <circle cx="7.5" cy="7.5" r="1.4" fill="#B8914F" opacity=".22"/>
+    </pattern>
+    <pattern id="ob-mesh2" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+      <path d="M0 5.5h11M5.5 0v11" stroke="#C4A165" stroke-width="1.1" opacity=".34"/>
+    </pattern>
+  </defs>
+
+  <circle cx="160" cy="160" r="152" fill="url(#ob-bg)"/>
+  <ellipse cx="160" cy="248" rx="106" ry="19" fill="#262858" opacity=".13"/>
+
+  <!-- ── Oblea entera, de pie y recargada ── -->
+  <g transform="rotate(-13 196 128)">
+    <!-- canto de la oblea de pie -->
+    <ellipse cx="196" cy="130" rx="84" ry="84" fill="#C9A96F"/>
+    <ellipse cx="196" cy="127" rx="84" ry="84" fill="url(#ob-face)"/>
+    <ellipse cx="196" cy="127" rx="84" ry="84" fill="url(#ob-mesh)"/>
+    <!-- orilla ondulada -->
+    <ellipse cx="196" cy="127" rx="84" ry="84" fill="none" stroke="#CFAF78" stroke-width="3" stroke-dasharray="7 5" opacity=".75"/>
+    <ellipse cx="196" cy="127" rx="66" ry="66" fill="none" stroke="#CFAF78" stroke-width="1.6" opacity=".4"/>
+    <!-- zonas tostadas del comal -->
+    <g fill="#C89A55" opacity=".3">
+      <ellipse cx="168" cy="98" rx="19" ry="13" transform="rotate(-24 168 98)"/>
+      <ellipse cx="222" cy="152" rx="16" ry="11" transform="rotate(18 222 152)"/>
+      <ellipse cx="214" cy="92" rx="11" ry="8"/>
+    </g>
+    <path d="M144 92a84 84 0 0 1 44-30" fill="none" stroke="#FFFEF8" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+  </g>
+
+  <!-- ── Pila de obleas acostadas ── -->
+  <g>
+    <!-- cantos apilados: 4 hojas delgadas -->
+    <g>
+      <rect x="42" y="196" width="176" height="16" fill="#DCC49B"/>
+      <ellipse cx="130" cy="212" rx="88" ry="23" fill="#DCC49B"/>
+      <ellipse cx="130" cy="207" rx="88" ry="23" fill="#EBD8B4"/>
+      <ellipse cx="130" cy="202" rx="88" ry="23" fill="#DCC49B"/>
+      <ellipse cx="130" cy="197" rx="88" ry="23" fill="#EBD8B4"/>
+      <ellipse cx="130" cy="192" rx="88" ry="23" fill="#DCC49B"/>
+    </g>
+    <!-- hoja superior -->
+    <ellipse cx="130" cy="186" rx="88" ry="23" fill="url(#ob-stack)"/>
+    <ellipse cx="130" cy="186" rx="88" ry="23" fill="url(#ob-mesh2)"/>
+    <ellipse cx="130" cy="186" rx="88" ry="23" fill="none" stroke="#CFAF78" stroke-width="2.4" stroke-dasharray="6 4.5" opacity=".8"/>
+    <ellipse cx="130" cy="186" rx="62" ry="15" fill="none" stroke="#CFAF78" stroke-width="1.4" opacity=".3"/>
+    <ellipse cx="112" cy="180" rx="18" ry="6" fill="#C89A55" opacity=".22" transform="rotate(-6 112 180)"/>
+    <path d="M84 180c16-6 36-9 54-7" fill="none" stroke="#FFFEF8" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+  </g>
+</svg>

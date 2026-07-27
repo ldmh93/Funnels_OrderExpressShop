@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="es-MX" class="sin-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ======================================================================
+     SEO
+     ⚠️ Cambiar el dominio de canonical y og:url por el definitivo.
+     ====================================================================== -->
+<title>OEM Shop | Dulces típicos michoacanos con envío a domicilio</title>
+<meta name="description" content="Morelianas, cocadas, alegrías, obleas, ate y jamoncillo de Michoacán, hechos con receta tradicional y enviados hasta tu puerta. Arma tu paquete y pide en minutos.">
+<meta name="theme-color" content="#262858">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://oemshop.mx/">
+
+<!-- Open Graph (Facebook / WhatsApp / Instagram) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="OEM Shop">
+<meta property="og:title" content="El sabor de Michoacán directo hasta tu puerta">
+<meta property="og:description" content="Dulces típicos mexicanos elaborados con tradición y enviados hasta donde estés. Pide tu paquete en OEM Shop.">
+<meta property="og:url" content="https://oemshop.mx/">
+<meta property="og:image" content="https://oemshop.mx/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Canasta artesanal con dulces típicos michoacanos sobre fondo azul de OEM Shop">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El sabor de Michoacán directo hasta tu puerta">
+<meta name="twitter:description" content="Dulces típicos mexicanos elaborados con tradición y enviados hasta donde estés.">
+<meta name="twitter:image" content="https://oemshop.mx/assets/images/og-image.jpg">
+
+<!-- Iconos -->
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+
+<!-- ======================================================================
+     RENDIMIENTO
+     Se precarga la imagen del hero (elemento LCP) y se abre la conexión
+     con Google Fonts antes de que el navegador descubra el <link>.
+     ====================================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/images/dulces-canasta.png" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600;800&display=swap">
+
+<!-- Hojas de estilo: tokens → componentes → layout -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ======================================================================
+     DATOS ESTRUCTURADOS (Schema.org)
+     Nota: los productos no llevan "offers" porque todavía no hay precios
+     reales publicados. Añádelos (price, priceCurrency, availability) en
+     cuanto existan: es lo que habilita los resultados enriquecidos.
+     ====================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://oemshop.mx/#organizacion",
+      "name": "OEM Shop",
+      "alternateName": "Order Express Shop",
+      "url": "https://oemshop.mx/",
+      "logo": "https://oemshop.mx/assets/logo/oem-shop-logo.svg",
+      "description": "Venta en línea de dulces típicos michoacanos con envío a domicilio.",
+      "areaServed": { "@type": "Country", "name": "México" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://oemshop.mx/#sitio",
+      "url": "https://oemshop.mx/",
+      "name": "OEM Shop",
+      "inLanguage": "es-MX",
+      "publisher": { "@id": "https://oemshop.mx/#organizacion" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Dulces típicos michoacanos",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": {
+          "@type": "Product", "name": "Morelianas",
+          "description": "Obleas crujientes rellenas de cajeta de leche quemada, el dulce insignia de Morelia.",
+          "image": "https://oemshop.mx/assets/images/producto-morelianas.jpg",
+          "category": "Dulces típicos mexicanos",
+          "brand": { "@id": "https://oemshop.mx/#organizacion" } } },
+        { "@type": "ListItem", "position": 2, "item": {
+          "@type": "Product", "name": "Cocadas",
+          "description": "Coco rallado horneado a fuego lento hasta dorar, suave por dentro y tostado arriba.",
+          "image": "https://oemshop.mx/assets/images/producto-cocadas.jpg",
+          "category": "Dulces típicos mexicanos",
+          "brand": { "@id": "https://oemshop.mx/#organizacion" } } },
+        { "@type": "ListItem", "position": 3, "item": {
+          "@type": "Product", "name": "Ate de membrillo",
+          "description": "Fruta cocida durante horas hasta cuajar, se rebana y se comparte con queso.",
+          "image": "https://oemshop.mx/assets/images/producto-ate.jpg",
+          "category": "Dulces típicos mexicanos",
+          "brand": { "@id": "https://oemshop.mx/#organizacion" } } },
+        { "@type": "ListItem", "position": 4, "item": {
+          "@type": "Product", "name": "Alegrías",
+          "description": "Amaranto reventado con miel de piloncillo, un dulce prehispánico que sigue vivo.",
+          "image": "https://oemshop.mx/assets/images/producto-alegrias.jpg",
+          "category": "Dulces típicos mexicanos",
+          "brand": { "@id": "https://oemshop.mx/#organizacion" } } },
+        { "@type": "ListItem", "position": 5, "item": {
+          "@type": "Product", "name": "Jamoncillo de leche",
+          "description": "Leche, azúcar y paciencia: un dulce de leche que se deshace en la boca.",
+          "image": "https://oemshop.mx/assets/images/producto-jamoncillo.jpg",
+          "category": "Dulces típicos mexicanos",
+          "brand": { "@id": "https://oemshop.mx/#organizacion" } } },
+        { "@type": "ListItem", "position": 6, "item": {
+          "@type": "Product", "name": "Palanqueta",
+          "description": "Cacahuate entero atrapado en caramelo de piloncillo, crujiente de principio a fin.",
+          "image": "https://oemshop.mx/assets/images/producto-palanqueta.jpg",
+          "category": "Dulces típicos mexicanos",
+          "brand": { "@id": "https://oemshop.mx/#organizacion" } } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a class="saltar-al-contenido" href="#contenido">Saltar al contenido</a>
+
+<!-- ======================================================================
+     SPRITE DE ICONOS
+     Se inserta una sola vez y cada icono se reutiliza apuntando por id
+     al symbol correspondiente (ico-tradicion, ico-calidad, ico-delivery…).
+     Cero peticiones extra y los iconos heredan el color del texto.
+     ====================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ico-tradicion" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20.5s-6.5-4.1-8.4-8A4.6 4.6 0 0 1 12 8.3a4.6 4.6 0 0 1 8.4 4.2c-1.9 3.9-8.4 8-8.4 8Z"/>
+      <path d="M7 3.5c1.2-.9 2.6-1 3.6-.2M17 3.5c-1.2-.9-2.6-1-3.6-.2"/>
+    </symbol>
+    <symbol id="ico-calidad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="9" r="6"/>
+      <path d="m9.5 8.8 1.7 1.7 3.4-3.4"/>
+      <path d="m8.4 14.3-1.6 6.9L12 18.6l5.2 2.6-1.6-6.9"/>
+    </symbol>
+    <symbol id="ico-delivery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 6.5h10.5v10H2zM12.5 9.5H17l3 3v4h-7.5z"/>
+      <circle cx="6.2" cy="18.5" r="1.9"/><circle cx="16.3" cy="18.5" r="1.9"/>
+      <path d="M8.1 18.5h6.3"/>
+    </symbol>
+    <symbol id="ico-estrella" viewBox="0 0 24 24" fill="currentColor">
+      <path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9z"/>
+    </symbol>
+    <symbol id="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9.2"/><path d="m8 12.3 2.7 2.7L16 9.7"/>
+    </symbol>
+    <symbol id="ico-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 12h14M13 6.5 18.5 12 13 17.5"/>
+    </symbol>
+    <symbol id="ico-carrito" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5.5 7.5h13l-1.2 12a1.6 1.6 0 0 1-1.6 1.4H8.3a1.6 1.6 0 0 1-1.6-1.4z"/>
+      <path d="M9 9.5V6.3a3 3 0 0 1 6 0v3.2"/>
+    </symbol>
+    <symbol id="ico-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21.5s7-5.8 7-11a7 7 0 1 0-14 0c0 5.2 7 11 7 11Z"/><circle cx="12" cy="10.2" r="2.6"/>
+    </symbol>
+    <symbol id="ico-caja" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 2.8 8.5 4.4v9.6L12 21.2 3.5 16.8V7.2z"/><path d="M3.5 7.2 12 11.6l8.5-4.4M12 11.6v9.6"/>
+    </symbol>
+    <symbol id="ico-escudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2.6 4.5 5.8v6c0 4.5 3.1 8.4 7.5 9.6 4.4-1.2 7.5-5.1 7.5-9.6v-6z"/><path d="m8.7 11.8 2.4 2.4 4.2-4.4"/>
+    </symbol>
+    <symbol id="ico-fresco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 4.5c0 8.3-4.4 12.7-10.6 12.7-2.5 0-4.4-.8-4.4-.8s.6-9.3 9-11c3.1-.6 6-.9 6-.9Z"/>
+      <path d="M4 20.5c1.4-4.6 4.3-7.7 8.5-9.6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ======================================================================
+     HEADER
+     ====================================================================== -->
+<header class="header">
+  <div class="contenedor header__inner">
+
+    <a class="logo" href="#inicio" aria-label="OEM Shop, ir al inicio">
+      <img class="logo__img" src="assets/logo/oem-shop-logo-blanco.svg" alt="OEM Shop" width="258" height="72">
+      <span class="logo__shop">SHOP</span>
+    </a>
+
+    <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+      <a class="nav__enlace" href="#dulces">Dulces</a>
+      <a class="nav__enlace" href="#historia">Nuestra historia</a>
+      <a class="nav__enlace" href="#paquete">Arma tu paquete</a>
+      <a class="nav__enlace" href="#opiniones">Opiniones</a>
+      <a class="btn btn--primario" href="#comprar" data-cta="nav">
+        Comprar ahora
+        <svg class="btn__icono" aria-hidden="true"><use href="#ico-flecha"/></svg>
+      </a>
+    </nav>
+
+    <!-- Blanco en lugar de fucsia: el header flota sobre la forma rosa
+         del hero y un botón rosa sobre rosa perdería todo el contraste. -->
+    <a class="btn btn--claro header__cta" href="#comprar" data-cta="header">
+      Comprar ahora
+      <svg class="btn__icono" aria-hidden="true"><use href="#ico-flecha"/></svg>
+    </a>
+
+    <button class="hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ====================================================================
+       1. HERO
+       ==================================================================== -->
+  <section class="hero" id="inicio">
+    <div class="hero__forma-rosa" data-paralaje="0.12" aria-hidden="true"></div>
+    <div class="hero__forma-crema" aria-hidden="true"></div>
+
+    <div class="contenedor hero__inner">
+
+      <div class="hero__texto-col">
+        <span class="badge badge--claro" data-reveal>
+          <span class="badge__punto badge__punto--vivo"></span>
+          Enviamos a todo México
+        </span>
+
+        <h1 class="hero__titulo" data-reveal>
+          El sabor de Michoacán<br>
+          directo <span class="hero__resalte">hasta tu puerta</span>
+        </h1>
+
+        <p class="hero__texto" data-reveal>
+          Dulces típicos mexicanos elaborados con tradición y enviados hasta
+          donde estés. Los mismos de la plaza de Morelia, empacados con cuidado
+          y en tus manos en días.
+        </p>
+
+        <div class="hero__acciones" data-reveal>
+          <a class="btn btn--primario btn--grande" href="#comprar" data-cta="hero-principal">
+            Comprar ahora
+            <svg class="btn__icono" aria-hidden="true"><use href="#ico-flecha"/></svg>
+          </a>
+          <a class="btn btn--secundario btn--grande" href="#dulces">Conocer dulces</a>
+        </div>
+
+        <p class="hero__prueba" data-reveal>
+          <span class="hero__estrellas" aria-hidden="true">
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg>
+          </span>
+          Clientes que ya recibieron su antojo en casa
+        </p>
+      </div>
+
+      <div class="hero__media" data-reveal="zoom">
+        <img class="hero__foto"
+             src="assets/images/dulces-canasta.png"
+             alt="Canasta artesanal de palma tejida rebosante de dulces típicos michoacanos: palanqueta, obleas, jamoncillo, cocada y muéganos"
+             width="432" height="298"
+             fetchpriority="high" decoding="async">
+
+        <div class="hero__pastilla hero__pastilla--envio">
+          <svg aria-hidden="true"><use href="#ico-delivery"/></svg>
+          <div>
+            <b>Envío a domicilio</b>
+            <span>A toda la República</span>
+          </div>
+        </div>
+
+        <div class="hero__pastilla hero__pastilla--fresco">
+          <svg aria-hidden="true"><use href="#ico-fresco"/></svg>
+          <div>
+            <b>Receta tradicional</b>
+            <span>Hecho en Michoacán</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       2. BARRA DE CONFIANZA
+       ==================================================================== -->
+  <section class="confianza" aria-label="Por qué comprar en OEM Shop">
+    <div class="contenedor">
+      <ul class="confianza__lista">
+        <li class="confianza__item">
+          <svg aria-hidden="true"><use href="#ico-caja"/></svg>
+          Empaque que protege cada pieza
+        </li>
+        <li class="confianza__item">
+          <svg aria-hidden="true"><use href="#ico-escudo"/></svg>
+          Compra segura en OEM Shop
+        </li>
+        <li class="confianza__item">
+          <svg aria-hidden="true"><use href="#ico-delivery"/></svg>
+          Seguimiento de tu pedido
+        </li>
+        <li class="confianza__item">
+          <svg aria-hidden="true"><use href="#ico-pin"/></svg>
+          Directo de Michoacán
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       3. VALOR DE MARCA
+       ==================================================================== -->
+  <section class="seccion seccion--crema valores">
+    <div class="blob blob--crema" aria-hidden="true"></div>
+
+    <div class="contenedor seccion__contenido">
+      <header class="enc" data-reveal>
+        <span class="enc__kicker">Por qué OEM Shop</span>
+        <h2 class="enc__titulo">Un pedacito de Michoacán en cada bocado</h2>
+        <p class="enc__texto">
+          No vendemos dulces: mandamos por paquetería el sabor de una plaza,
+          una feria y una cocina de rancho.
+        </p>
+      </header>
+
+      <div class="rejilla rejilla--3" data-reveal-grupo>
+
+        <article class="valor" data-reveal>
+          <div class="valor__icono">
+            <svg aria-hidden="true"><use href="#ico-tradicion"/></svg>
+          </div>
+          <h3 class="valor__titulo">Tradición</h3>
+          <p class="valor__texto">
+            Sabores mexicanos que han pasado de generación en generación.
+            Las mismas recetas, el mismo punto de cocción, el mismo antojo
+            de siempre.
+          </p>
+        </article>
+
+        <article class="valor" data-reveal>
+          <div class="valor__icono">
+            <svg aria-hidden="true"><use href="#ico-calidad"/></svg>
+          </div>
+          <h3 class="valor__titulo">Calidad</h3>
+          <p class="valor__texto">
+            Productos seleccionados pieza por pieza para ofrecer una
+            experiencia auténtica. Si no lo mandaríamos a nuestra casa,
+            no lo mandamos a la tuya.
+          </p>
+        </article>
+
+        <article class="valor" data-reveal>
+          <div class="valor__icono">
+            <svg aria-hidden="true"><use href="#ico-delivery"/></svg>
+          </div>
+          <h3 class="valor__titulo">Delivery</h3>
+          <p class="valor__texto">
+            Recibe tus dulces favoritos directamente en tu hogar. Empacados
+            para que lleguen enteros, frescos y listos para compartir.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       4. CATÁLOGO DESTACADO
+       ==================================================================== -->
+  <section class="seccion seccion--blanca" id="dulces">
+    <div class="contenedor">
+
+      <header class="enc" data-reveal>
+        <span class="enc__kicker">Catálogo</span>
+        <h2 class="enc__titulo">Nuestros dulces favoritos</h2>
+        <p class="enc__texto">
+          Los clásicos que nunca fallan. Elige los tuyos y arma el paquete
+          a tu gusto.
+        </p>
+      </header>
+
+      <div class="rejilla rejilla--cat" data-reveal-grupo>
+
+        <article class="producto" data-reveal>
+          <div class="producto__media">
+            <span class="badge badge--rosa producto__etiqueta">Más pedido</span>
+            <img class="producto__img" src="assets/images/producto-morelianas.jpg"
+                 alt="Obleas doradas apiladas junto a un tazón de cajeta, listas para armar morelianas"
+                 width="700" height="700" loading="lazy" decoding="async">
+          </div>
+          <div class="producto__cuerpo">
+            <h3 class="producto__nombre">Morelianas</h3>
+            <p class="producto__desc">
+              Oblea crujiente y cajeta de leche quemada entre dos capas.
+              La postal dulce de Morelia, en tu mesa.
+            </p>
+            <div class="producto__pie">
+              <span class="producto__origen">
+                <svg aria-hidden="true"><use href="#ico-pin"/></svg> Morelia
+              </span>
+              <a class="btn btn--primario" href="#comprar" data-cta="catalogo" data-producto="morelianas">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-reveal>
+          <div class="producto__media">
+            <img class="producto__img" src="assets/images/producto-cocadas.jpg"
+                 alt="Cocadas de coco rallado horneadas, cortadas en cuadros y apiladas"
+                 width="700" height="700" loading="lazy" decoding="async">
+          </div>
+          <div class="producto__cuerpo">
+            <h3 class="producto__nombre">Cocadas</h3>
+            <p class="producto__desc">
+              Coco rallado horneado a fuego lento hasta dorar. Suavecita por
+              dentro, tostadita arriba.
+            </p>
+            <div class="producto__pie">
+              <span class="producto__origen">
+                <svg aria-hidden="true"><use href="#ico-pin"/></svg> Michoacán
+              </span>
+              <a class="btn btn--primario" href="#comprar" data-cta="catalogo" data-producto="cocadas">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-reveal>
+          <div class="producto__media">
+            <img class="producto__img" src="assets/images/producto-ate.jpg"
+                 alt="Barra de ate de membrillo rebanada junto a membrillos frescos partidos"
+                 width="700" height="700" loading="lazy" decoding="async">
+          </div>
+          <div class="producto__cuerpo">
+            <h3 class="producto__nombre">Ate de membrillo</h3>
+            <p class="producto__desc">
+              Fruta cocida durante horas hasta cuajar. Se rebana, se acompaña
+              con queso y se comparte.
+            </p>
+            <div class="producto__pie">
+              <span class="producto__origen">
+                <svg aria-hidden="true"><use href="#ico-pin"/></svg> Michoacán
+              </span>
+              <a class="btn btn--primario" href="#comprar" data-cta="catalogo" data-producto="ate">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-reveal>
+          <div class="producto__media">
+            <span class="badge badge--rosa producto__etiqueta">Clásico</span>
+            <img class="producto__img" src="assets/images/producto-alegrias.jpg"
+                 alt="Alegrías de amaranto con cacahuate y ajonjolí servidas en un plato sobre textil mexicano"
+                 width="700" height="700" loading="lazy" decoding="async">
+          </div>
+          <div class="producto__cuerpo">
+            <h3 class="producto__nombre">Alegrías</h3>
+            <p class="producto__desc">
+              Amaranto reventado y miel de piloncillo. El dulce que México
+              come desde antes de llamarse México.
+            </p>
+            <div class="producto__pie">
+              <span class="producto__origen">
+                <svg aria-hidden="true"><use href="#ico-pin"/></svg> Michoacán
+              </span>
+              <a class="btn btn--primario" href="#comprar" data-cta="catalogo" data-producto="alegrias">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-reveal>
+          <div class="producto__media">
+            <span class="badge badge--rosa producto__etiqueta">Favorito</span>
+            <img class="producto__img" src="assets/images/producto-jamoncillo.jpg"
+                 alt="Piezas de jamoncillo de leche en un platón blanco sobre un sarape de colores"
+                 width="700" height="700" loading="lazy" decoding="async">
+          </div>
+          <div class="producto__cuerpo">
+            <h3 class="producto__nombre">Jamoncillo de leche</h3>
+            <p class="producto__desc">
+              Leche, azúcar y paciencia. Se deshace en la boca y sabe
+              exactamente a casa de la abuela.
+            </p>
+            <div class="producto__pie">
+              <span class="producto__origen">
+                <svg aria-hidden="true"><use href="#ico-pin"/></svg> Michoacán
+              </span>
+              <a class="btn btn--primario" href="#comprar" data-cta="catalogo" data-producto="jamoncillo">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-reveal>
+          <div class="producto__media">
+            <img class="producto__img" src="assets/images/producto-palanqueta.jpg"
+                 alt="Palanquetas de cacahuate en caramelo de piloncillo, apiladas y envueltas"
+                 width="700" height="700" loading="lazy" decoding="async">
+          </div>
+          <div class="producto__cuerpo">
+            <h3 class="producto__nombre">Palanqueta</h3>
+            <p class="producto__desc">
+              Cacahuate entero atrapado en caramelo de piloncillo. Truena al
+              morderla y nunca se acaba.
+            </p>
+            <div class="producto__pie">
+              <span class="producto__origen">
+                <svg aria-hidden="true"><use href="#ico-pin"/></svg> Michoacán
+              </span>
+              <a class="btn btn--primario" href="#comprar" data-cta="catalogo" data-producto="palanqueta">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="catalogo__cierre" data-reveal>
+        <p class="catalogo__nota">¿Los quieres todos? También se puede.</p>
+        <a class="btn btn--primario btn--grande" href="#comprar" data-cta="post-catalogo">
+          Comprar ahora
+          <svg class="btn__icono" aria-hidden="true"><use href="#ico-carrito"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       5. SECCIÓN EMOCIONAL
+       ==================================================================== -->
+  <section class="seccion seccion--azul historia" id="historia">
+    <div class="blob blob--azul" aria-hidden="true"></div>
+
+    <div class="contenedor seccion__contenido historia__inner">
+
+      <div class="historia__media" data-reveal="izq">
+        <span class="historia__marco" aria-hidden="true"></span>
+        <img class="historia__foto"
+             src="assets/images/seccion-historia.jpg"
+             alt="Jamoncillo de leche servido en un platón sobre un sarape michoacano, junto a un tazón de talavera"
+             width="900" height="600" loading="lazy" decoding="async">
+      </div>
+
+      <div data-reveal="der">
+        <header class="enc enc--inv enc--izq">
+          <span class="enc__kicker">Nuestra historia</span>
+          <h2 class="enc__titulo">Más que dulces, compartimos historia</h2>
+          <p class="enc__texto">
+            Cada dulce representa la cultura, tradición y sabores únicos de
+            Michoacán. Detrás de una moreliana hay un comal, unas manos que
+            aprendieron de otras manos y una receta que nadie escribió porque
+            nunca hizo falta.
+          </p>
+        </header>
+
+        <ul class="lista-check">
+          <li><svg aria-hidden="true"><use href="#ico-check"/></svg> Elaboración artesanal, en tandas pequeñas</li>
+          <li><svg aria-hidden="true"><use href="#ico-check"/></svg> Productores michoacanos de toda la vida</li>
+          <li><svg aria-hidden="true"><use href="#ico-check"/></svg> Empaque pensado para que llegue como salió</li>
+        </ul>
+
+        <blockquote class="historia__cita">
+          «El que prueba un dulce michoacano no compra un postre: se acuerda
+          de algo.»
+        </blockquote>
+
+        <div class="historia__acciones">
+          <a class="btn btn--primario btn--grande" href="#comprar" data-cta="historia">
+            Comprar ahora
+            <svg class="btn__icono" aria-hidden="true"><use href="#ico-flecha"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       6. PROMOCIÓN · ARMA TU PAQUETE
+       ==================================================================== -->
+  <section class="seccion seccion--rosa paquete" id="paquete">
+    <div class="blob" aria-hidden="true"></div>
+
+    <div class="contenedor seccion__contenido paquete__inner">
+
+      <header class="enc enc--rosa" data-reveal>
+        <span class="enc__kicker">Tú decides</span>
+        <h2 class="enc__titulo">Arma tu paquete favorito</h2>
+        <p class="enc__texto">
+          Combina tus dulces preferidos y disfruta una experiencia llena de
+          sabor mexicano. Tú eliges qué va dentro; nosotros nos encargamos
+          de que llegue.
+        </p>
+      </header>
+
+      <ol class="paquete__pasos" data-reveal-grupo>
+        <li class="paquete__paso" data-reveal>
+          <span class="paquete__num">1</span>
+          <b>Elige tus dulces</b>
+          <span>Morelianas, cocadas, alegrías, obleas, ate, jamoncillo… los que se te antojen.</span>
+        </li>
+        <li class="paquete__paso" data-reveal>
+          <span class="paquete__num">2</span>
+          <b>Dinos a dónde va</b>
+          <span>Para ti, para tu mamá o para ese amigo que extraña México.</span>
+        </li>
+        <li class="paquete__paso" data-reveal>
+          <span class="paquete__num">3</span>
+          <b>Nosotros lo enviamos</b>
+          <span>Lo empacamos con cuidado y te compartimos el seguimiento.</span>
+        </li>
+      </ol>
+
+      <div data-reveal>
+        <a class="btn btn--claro btn--grande" href="#comprar" data-cta="paquete">
+          Crear mi pedido
+          <svg class="btn__icono" aria-hidden="true"><use href="#ico-carrito"/></svg>
+        </a>
+        <p class="paquete__nota">Sin mínimo de piezas. Arma el paquete a tu medida.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       7. TESTIMONIOS
+       ⚠️ CONTENIDO DE EJEMPLO. Sustituir por opiniones reales de clientes
+          antes de publicar. Ver README → "Antes de publicar".
+       ==================================================================== -->
+  <section class="seccion seccion--crema" id="opiniones">
+    <div class="contenedor">
+
+      <header class="enc" data-reveal>
+        <span class="enc__kicker">Opiniones</span>
+        <h2 class="enc__titulo">Nuestros clientes aman el sabor</h2>
+      </header>
+
+      <div class="rejilla rejilla--3" data-reveal-grupo>
+
+        <article class="testimonio" data-reveal>
+          <div class="testimonio__estrellas" role="img" aria-label="5 de 5 estrellas">
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg>
+          </div>
+          <p class="testimonio__texto">
+            «Excelente sabor, llegaron rápido y perfectamente empacados. Ni una
+            oblea rota, y eso ya es decir mucho.»
+          </p>
+          <footer class="testimonio__autor">
+            <span class="testimonio__avatar" aria-hidden="true">MG</span>
+            <div>
+              <div class="testimonio__nombre">María G.</div>
+              <div class="testimonio__lugar">Guadalajara, Jalisco</div>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonio" data-reveal>
+          <div class="testimonio__estrellas" role="img" aria-label="5 de 5 estrellas">
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg>
+          </div>
+          <p class="testimonio__texto">
+            «Se lo mandé a mi mamá por su cumpleaños y me habló llorando.
+            Saben igualito a los de la plaza.»
+          </p>
+          <footer class="testimonio__autor">
+            <span class="testimonio__avatar" aria-hidden="true">RL</span>
+            <div>
+              <div class="testimonio__nombre">Ricardo L.</div>
+              <div class="testimonio__lugar">Monterrey, Nuevo León</div>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonio" data-reveal>
+          <div class="testimonio__estrellas" role="img" aria-label="5 de 5 estrellas">
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg><svg><use href="#ico-estrella"/></svg>
+            <svg><use href="#ico-estrella"/></svg>
+          </div>
+          <p class="testimonio__texto">
+            «Pedí el paquete surtido para la oficina y no duró ni la mañana.
+            Ya vamos por el tercer pedido.»
+          </p>
+          <footer class="testimonio__autor">
+            <span class="testimonio__avatar" aria-hidden="true">AT</span>
+            <div>
+              <div class="testimonio__nombre">Ana T.</div>
+              <div class="testimonio__lugar">Ciudad de México</div>
+            </div>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       8. CTA FINAL
+       ==================================================================== -->
+  <section class="seccion seccion--azul cierre" id="comprar">
+    <div class="cierre__forma" aria-hidden="true"></div>
+
+    <div class="contenedor seccion__contenido cierre__inner">
+
+      <div data-reveal="izq">
+        <h2 class="cierre__titulo">¿Listo para probar Michoacán?</h2>
+        <p class="cierre__texto">
+          Tu antojo está a un clic. Elige tus dulces, arma tu paquete y
+          deja que el sabor de Michoacán haga el resto del camino.
+        </p>
+
+        <div class="cierre__acciones">
+          <a class="btn btn--primario btn--grande" href="#comprar" data-cta="cierre">
+            Comprar ahora
+            <svg class="btn__icono" aria-hidden="true"><use href="#ico-carrito"/></svg>
+          </a>
+          <a class="btn btn--secundario btn--grande" href="#dulces">Ver los dulces</a>
+        </div>
+
+        <p class="cierre__garantia">
+          Compra segura en OEM Shop · Empaque protegido · Envíos a todo México
+        </p>
+      </div>
+
+      <div class="cierre__media" data-reveal="der">
+        <img class="cierre__foto"
+             src="assets/images/seccion-cierre.jpg"
+             alt="Alegrías de amaranto recién cortadas, servidas en un plato sobre textil mexicano"
+             width="880" height="605" loading="lazy" decoding="async">
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     FOOTER
+     ====================================================================== -->
+<footer class="footer">
+  <div class="contenedor">
+    <div class="footer__inner">
+
+      <div class="footer__marca">
+        <a class="logo" href="#inicio" aria-label="OEM Shop, ir al inicio">
+          <img class="logo__img" src="assets/logo/oem-shop-logo-blanco.svg" alt="OEM Shop" width="258" height="72">
+          <span class="logo__shop">SHOP</span>
+        </a>
+        <p class="footer__desc">
+          Dulces típicos michoacanos con envío a domicilio. Tradición
+          artesanal, experiencia de compra moderna.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer__titulo">Explorar</h3>
+        <ul class="footer__lista">
+          <li><a href="#dulces">Nuestros dulces</a></li>
+          <li><a href="#historia">Nuestra historia</a></li>
+          <li><a href="#paquete">Arma tu paquete</a></li>
+          <li><a href="#opiniones">Opiniones</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__titulo">Comprar</h3>
+        <ul class="footer__lista">
+          <li><a href="#comprar" data-cta="footer">Ir a la tienda</a></li>
+          <li><a href="#comprar" data-cta="footer-paquete">Armar mi paquete</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__base">
+      <span>© <span data-anio>2026</span> OEM Shop · Order Express Shop. Todos los derechos reservados.</span>
+      <span>Hecho en Michoacán, México 🇲🇽</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================================================================
+     CTA FLOTANTE (solo móvil)
+     ====================================================================== -->
+<div class="cta-flotante">
+  <a class="btn btn--primario btn--grande btn--bloque" href="#comprar" data-cta="flotante">
+    Comprar ahora
+    <svg class="btn__icono" aria-hidden="true"><use href="#ico-carrito"/></svg>
+  </a>
+</div>
+
+<script src="js/main.js" defer></script>
+<script src="js/animations.js" defer></script>
+</body>
+</html>

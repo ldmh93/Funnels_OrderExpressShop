@@ -1,0 +1,110 @@
+/* =============================================================
+   OEPM SHOP · MEDICAMENTOS Y SALUD
+   variables.css — Design tokens extraídos del branding oficial
+   -------------------------------------------------------------
+   Fuente del branding:
+   · assets/logo/oepm-shop-logo.svg  → magenta oficial #DD1766
+   · assets/branding/ejemplos-branding-medicina/
+       referencia-post-delivery-service.jpeg
+     → magenta pleno + blanco + tinta azul-violeta,
+       formas orgánicas tipo pétalo, franjas diagonales,
+       tipografía geométrica bold itálica en mayúsculas.
+   NO usar tokens de ningún otro proyecto.
+   ============================================================= */
+
+:root {
+  /* ---------- Color de marca ---------- */
+  --c-magenta: #dd1766;          /* color oficial del logotipo */
+  --c-magenta-600: #c4104f;      /* hover / estados presionados */
+  --c-magenta-700: #9e0c3f;      /* degradados profundos */
+  --c-magenta-400: #ff3d8a;      /* luz del degradado */
+  --c-magenta-100: #ffd9e7;      /* bordes suaves */
+  --c-magenta-050: #fff2f7;      /* fondos tintados */
+
+  /* ---------- Tinta / neutros ---------- */
+  --c-ink: #2b2a4a;              /* azul-violeta del branding */
+  --c-ink-700: #45436a;
+  --c-ink-500: #6b6889;          /* texto secundario */
+  --c-ink-300: #a9a7bd;
+  --c-line: #e8e5ee;             /* divisores */
+  --c-cloud: #f7f4f8;            /* fondo de sección */
+  --c-white: #ffffff;
+
+  /* ---------- Apoyo (uso muy limitado) ---------- */
+  --c-mint: #12b886;             /* checks, "aprobado" */
+  --c-amber: #ffb020;            /* estrellas de reseñas */
+
+  /* ---------- Degradados de marca ---------- */
+  --g-magenta: linear-gradient(135deg, var(--c-magenta-400) 0%, var(--c-magenta) 55%, var(--c-magenta-700) 100%);
+  --g-magenta-soft: linear-gradient(160deg, #fff2f7 0%, #ffe4ef 100%);
+  --g-ink: linear-gradient(140deg, #35325c 0%, #22213c 100%);
+
+  /* ---------- Tipografía ---------- */
+  --font-display: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Escala fluida (mobile first) */
+  --fs-display: clamp(2.25rem, 1.35rem + 4.2vw, 4.25rem);
+  --fs-h1: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
+  --fs-h2: clamp(1.65rem, 1.15rem + 2.2vw, 2.75rem);
+  --fs-h3: clamp(1.2rem, 1.05rem + 0.7vw, 1.5rem);
+  --fs-lead: clamp(1rem, 0.95rem + 0.45vw, 1.2rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.78rem;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+  --ls-tight: -0.02em;
+  --ls-wide: 0.14em;
+
+  /* ---------- Espaciado (escala de 4) ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --section-y: clamp(3.5rem, 2rem + 7vw, 7rem);
+
+  /* ---------- Layout ---------- */
+  --wrap: 1180px;
+  --wrap-narrow: 820px;
+  --gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --header-h: 72px;
+
+  /* ---------- Radios (formas orgánicas del branding) ---------- */
+  --r-xs: 8px;
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+  --r-pill: 999px;
+  --r-petal: 52% 52% 52% 8%;     /* pétalo/hoja del branding */
+
+  /* ---------- Sombras ---------- */
+  --sh-xs: 0 2px 8px rgba(43, 42, 74, 0.06);
+  --sh-sm: 0 6px 18px rgba(43, 42, 74, 0.08);
+  --sh-md: 0 14px 34px rgba(43, 42, 74, 0.10);
+  --sh-lg: 0 26px 60px rgba(43, 42, 74, 0.16);
+  --sh-magenta: 0 14px 30px rgba(221, 23, 102, 0.32);
+  --sh-magenta-lg: 0 22px 48px rgba(221, 23, 102, 0.38);
+
+  /* ---------- Movimiento ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 160ms var(--ease-soft);
+  --t-base: 280ms var(--ease-out);
+  --t-slow: 620ms var(--ease-out);
+
+  /* ---------- Capas ---------- */
+  --z-deco: 0;
+  --z-content: 1;
+  --z-sticky: 50;
+  --z-header: 100;
+  --z-modal: 200;
+}

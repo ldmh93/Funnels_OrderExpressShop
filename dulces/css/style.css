@@ -1,0 +1,1007 @@
+/* ==========================================================================
+   OEM SHOP · style.css
+   Reset, base tipográfica, layout y estilos de cada sección de la landing.
+
+   Orden de carga:  variables.css → components.css → style.css
+   ========================================================================== */
+
+/* ==========================================================================
+   1. RESET
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-alto) + 1rem);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--f-texto);
+  font-size: var(--t-base);
+  line-height: var(--lh-texto);
+  color: var(--c-texto);
+  background: var(--c-blanco);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+}
+
+ul, ol {
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--c-rosa-claro);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   2. LAYOUT BASE
+   ========================================================================== */
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: var(--padding-lateral);
+}
+
+.seccion {
+  position: relative;
+  padding-block: var(--sp-seccion);
+}
+
+.seccion--crema { background: var(--g-crema); }
+.seccion--blanca { background: var(--c-blanco); }
+.seccion--azul { background: var(--g-azul); color: var(--c-texto-inv); }
+.seccion--rosa { background: var(--g-rosa); color: var(--c-texto-inv); }
+
+.seccion__contenido {
+  position: relative;
+  z-index: var(--z-contenido);
+}
+
+/* Rejilla de tarjetas reutilizable */
+.rejilla {
+  display: grid;
+  gap: clamp(1.25rem, 0.9rem + 1.4vw, 2rem);
+}
+
+.rejilla--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+/* La perspectiva permite la inclinación 3D sutil de animations.js */
+.rejilla--cat {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+  perspective: 1400px;
+}
+
+/* ==========================================================================
+   3. HEADER
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-header);
+  height: var(--header-alto);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background var(--d-media) var(--e-suave),
+    box-shadow var(--d-media) var(--e-suave),
+    backdrop-filter var(--d-media) var(--e-suave);
+}
+
+/* Estado tras hacer scroll (lo activa main.js) */
+.header--fijo {
+  background: rgba(38, 40, 88, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 6px 24px rgba(26, 27, 61, 0.28);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  width: 100%;
+}
+
+/* --- Lockup del logotipo ------------------------------------------------ */
+/* "SHOP" va debajo del logotipo y centrado respecto a él. */
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo__img {
+  width: auto;
+  height: 34px;
+  transition: transform var(--d-media) var(--e-rebote);
+}
+
+.logo:hover .logo__img {
+  transform: scale(1.05);
+}
+
+.logo__shop {
+  font-family: var(--f-texto);
+  font-size: 0.62rem;
+  font-weight: 800;
+  /* El tracking deja un hueco sobrante después de la "P". Sin compensarlo la
+     palabra se vería corrida a la izquierda: el padding izquierdo iguala ese
+     hueco para que el centrado sea óptico y no solo matemático. */
+  letter-spacing: 0.34em;
+  padding-left: 0.34em;
+  color: var(--c-blanco);
+  line-height: 1;
+}
+
+.logo--oscuro .logo__shop { color: var(--c-azul); }
+
+/* --- Navegación --------------------------------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.1rem, 0.6rem + 1.4vw, 2.1rem);
+}
+
+.nav__enlace {
+  position: relative;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--c-blanco);
+  text-decoration: none;
+  padding-block: 0.35rem;
+  transition: color var(--d-rapida) var(--e-suave);
+}
+
+.nav__enlace::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--c-rosa-claro);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--d-media) var(--e-suave);
+}
+
+.nav__enlace:hover::after,
+.nav__enlace:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.header .btn {
+  --btn-py: 0.75em;
+  --btn-px: 1.6em;
+  font-size: 0.92rem;
+}
+
+/* El CTA que vive dentro de <nav> es solo para el panel móvil: en
+   escritorio se usa .header__cta y no debe duplicarse. */
+.nav > .btn {
+  display: none;
+}
+
+/* --- Botón hamburguesa -------------------------------------------------- */
+.hamburguesa {
+  display: none;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+.hamburguesa span {
+  display: block;
+  width: 21px;
+  height: 2px;
+  margin: 4px auto;
+  border-radius: 2px;
+  background: var(--c-blanco);
+  transition: transform var(--d-media) var(--e-suave),
+    opacity var(--d-rapida) var(--e-suave);
+}
+
+.hamburguesa[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburguesa[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburguesa[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(94svh, 900px);
+  padding-block: calc(var(--header-alto) + clamp(2.5rem, 1rem + 5vw, 5rem))
+    clamp(3.5rem, 2rem + 5vw, 6rem);
+  background: var(--g-azul);
+  color: var(--c-texto-inv);
+  overflow: hidden;
+}
+
+/* Formas orgánicas del fondo, heredadas del arte del anuncio */
+.hero__forma-rosa {
+  position: absolute;
+  top: -28%;
+  right: -12%;
+  width: min(78vw, 900px);
+  aspect-ratio: 1.35 / 1;
+  background: var(--g-rosa);
+  border-radius: 50% 50% 46% 54% / 58% 52% 48% 42%;
+  opacity: 0.95;
+  z-index: var(--z-fondo);
+}
+
+.hero__forma-crema {
+  position: absolute;
+  bottom: -32%;
+  left: -14%;
+  width: min(54vw, 560px);
+  aspect-ratio: 1 / 1;
+  background: var(--c-crema);
+  border-radius: var(--r-blob);
+  opacity: 0.13;
+  z-index: var(--z-fondo);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: var(--z-contenido);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(2.5rem, 1rem + 5vw, 4.5rem);
+}
+
+/* --- Columna de texto --------------------------------------------------- */
+.hero__titulo {
+  font-family: var(--f-display);
+  font-size: var(--t-hero);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  margin-block: var(--sp-5) var(--sp-5);
+}
+
+/* Palabra destacada en fucsia, con subrayado ondulado */
+.hero__resalte {
+  position: relative;
+  color: var(--c-rosa-claro);
+  white-space: nowrap;
+}
+
+.hero__resalte::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.12em;
+  height: 0.14em;
+  border-radius: var(--r-pill);
+  background: var(--c-rosa);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: subrayar 0.85s var(--e-suave) 0.75s forwards;
+}
+
+@keyframes subrayar {
+  to { transform: scaleX(1); }
+}
+
+.hero__texto {
+  max-width: 34rem;
+  font-size: var(--t-lead);
+  line-height: var(--lh-texto);
+  color: var(--c-texto-inv-suave);
+  text-wrap: pretty;
+}
+
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+}
+
+/* Micro-prueba social bajo los botones */
+.hero__prueba {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+  font-size: var(--t-sm);
+  color: var(--c-texto-inv-suave);
+}
+
+.hero__estrellas {
+  display: flex;
+  gap: 2px;
+  color: var(--c-oro);
+}
+
+.hero__estrellas svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Columna de imagen -------------------------------------------------- */
+/* Zona cuadrada: dentro va el óvalo crema y encima la canasta centrada. */
+.hero__media {
+  position: relative;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  width: min(100%, 540px);
+  aspect-ratio: 1 / 1;
+}
+
+/* Óvalo crema detrás del producto, igual que en el post original */
+.hero__media::before {
+  content: "";
+  position: absolute;
+  inset: 4%;
+  background: var(--c-crema);
+  border-radius: var(--r-blob);
+  opacity: 0.92;
+  z-index: 0;
+}
+
+/* La canasta va recortada sin fondo, así que flota sobre el óvalo.
+   La sombra debe seguir la silueta del producto y no la caja de la imagen:
+   por eso drop-shadow y no box-shadow. */
+.hero__foto {
+  position: relative;
+  z-index: 1;
+  /* Desborda un poco el óvalo por los lados y baja un pelo respecto al
+     centro: así la canasta se ve apoyada y no flotando en el vacío. */
+  width: 100%;
+  height: auto;
+  margin-top: 5%;
+  filter: drop-shadow(0 22px 26px rgba(20, 21, 48, 0.45));
+  animation: flotar 7s var(--e-suave) infinite;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(-1deg); }
+}
+
+/* Pastilla flotante "envío a todo México" */
+.hero__pastilla {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0.8rem 1.15rem;
+  background: var(--c-blanco);
+  border-radius: var(--r-md);
+  box-shadow: var(--s-lg);
+  animation: flotar 7s var(--e-suave) 0.9s infinite;
+}
+
+.hero__pastilla--envio {
+  bottom: 15%;
+  left: -5%;
+}
+
+.hero__pastilla--fresco {
+  top: 12%;
+  right: -3%;
+}
+
+.hero__pastilla svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: var(--c-rosa);
+}
+
+.hero__pastilla b {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--c-azul);
+  line-height: 1.2;
+}
+
+.hero__pastilla span {
+  font-size: var(--t-xs);
+  color: var(--c-texto-suave);
+}
+
+/* ==========================================================================
+   5. BARRA DE CONFIANZA
+   ========================================================================== */
+
+.confianza {
+  background: var(--c-azul-900);
+  color: var(--c-texto-inv);
+  padding-block: var(--sp-5);
+}
+
+.confianza__lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4) clamp(1.5rem, 0.5rem + 3.5vw, 3.5rem);
+  list-style: none;
+}
+
+.confianza__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--c-texto-inv-suave);
+}
+
+.confianza__item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--c-rosa-claro);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   6. SECCIÓN DE VALOR DE MARCA
+   ========================================================================== */
+
+.valores {
+  position: relative;
+}
+
+.valores .blob {
+  top: 8%;
+  right: -8%;
+  width: min(38vw, 380px);
+  aspect-ratio: 1;
+  opacity: 0.35;
+}
+
+/* ==========================================================================
+   7. CATÁLOGO
+   ========================================================================== */
+
+.catalogo__cierre {
+  margin-top: clamp(2.5rem, 1.6rem + 2.6vw, 3.75rem);
+  text-align: center;
+}
+
+.catalogo__nota {
+  margin-bottom: var(--sp-5);
+  font-size: var(--t-lead);
+  color: var(--c-texto-suave);
+}
+
+/* ==========================================================================
+   8. SECCIÓN EMOCIONAL (HISTORIA)
+   ========================================================================== */
+
+.historia {
+  overflow: hidden;
+}
+
+.historia .blob {
+  bottom: -22%;
+  left: -12%;
+  width: min(46vw, 460px);
+  aspect-ratio: 1;
+  opacity: 0.4;
+}
+
+.historia__inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: clamp(2.5rem, 1.2rem + 4.5vw, 5rem);
+}
+
+.historia__media {
+  position: relative;
+}
+
+.historia__foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--r-blob);
+  box-shadow: var(--s-xl);
+}
+
+/* Mancha fucsia desplazada detrás de la foto: el mismo recurso gráfico de
+   formas orgánicas del anuncio, asomando por una esquina. */
+.historia__marco {
+  position: absolute;
+  inset: 12% -7% -12% 7%;
+  background: var(--g-rosa);
+  border-radius: var(--r-blob);
+  z-index: -1;
+}
+
+.historia__cita {
+  margin-top: var(--sp-6);
+  padding-left: var(--sp-5);
+  border-left: 3px solid var(--c-rosa);
+  font-family: var(--f-display);
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--c-blanco);
+  line-height: var(--lh-media);
+}
+
+.historia__acciones {
+  margin-top: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+}
+
+/* ==========================================================================
+   9. PROMOCIÓN "ARMA TU PAQUETE"
+   ========================================================================== */
+
+.paquete {
+  overflow: hidden;
+  text-align: center;
+}
+
+.paquete .blob {
+  top: -30%;
+  left: 50%;
+  translate: -50% 0;
+  width: min(90vw, 820px);
+  aspect-ratio: 1.6 / 1;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.paquete__inner {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+/* Pasos para armar el paquete */
+.paquete__pasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: clamp(1.25rem, 0.8rem + 1.6vw, 2rem);
+  margin-block: clamp(2.25rem, 1.5rem + 2.4vw, 3.25rem);
+  list-style: none;
+  text-align: left;
+}
+
+.paquete__paso {
+  padding: var(--sp-5);
+  background: rgba(255, 255, 255, 0.17);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: var(--r-md);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform var(--d-media) var(--e-suave),
+    background var(--d-media) var(--e-suave);
+}
+
+.paquete__paso:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.19);
+}
+
+.paquete__num {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: var(--sp-4);
+  border-radius: 50%;
+  background: var(--c-blanco);
+  color: var(--c-rosa);
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.paquete__paso b {
+  display: block;
+  margin-bottom: var(--sp-2);
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Solo el <span> descriptivo que va tras el <b>. Si se apuntara a todos los
+   span del paso, este color pisaría también al de .paquete__num (mayor
+   especificidad) y el número quedaría blanco sobre blanco. */
+.paquete__paso > b + span {
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.paquete__nota {
+  margin-top: var(--sp-5);
+  font-size: var(--t-sm);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ==========================================================================
+   10. TESTIMONIOS
+   ========================================================================== */
+
+.opiniones__resumen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: calc(var(--sp-5) * -1);
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  font-size: var(--t-sm);
+  color: var(--c-texto-suave);
+}
+
+.opiniones__estrellas {
+  display: flex;
+  gap: 2px;
+  color: var(--c-oro);
+}
+
+.opiniones__estrellas svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ==========================================================================
+   11. CIERRE / CTA FINAL
+   ========================================================================== */
+
+.cierre {
+  overflow: hidden;
+}
+
+.cierre__forma {
+  position: absolute;
+  top: -40%;
+  right: -18%;
+  width: min(72vw, 760px);
+  aspect-ratio: 1.2 / 1;
+  background: var(--g-rosa);
+  border-radius: 48% 52% 54% 46% / 56% 44% 56% 44%;
+  opacity: 0.9;
+  z-index: var(--z-fondo);
+}
+
+.cierre__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(2.5rem, 1.2rem + 4.5vw, 4.5rem);
+}
+
+.cierre__titulo {
+  font-family: var(--f-display);
+  font-size: var(--t-h2);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--c-blanco);
+}
+
+.cierre__texto {
+  margin-top: var(--sp-4);
+  font-size: var(--t-lead);
+  color: var(--c-texto-inv-suave);
+  text-wrap: pretty;
+}
+
+.cierre__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+}
+
+.cierre__garantia {
+  margin-top: var(--sp-5);
+  font-size: var(--t-sm);
+  color: var(--c-texto-inv-suave);
+}
+
+.cierre__media {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 480px);
+}
+
+.cierre__foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  border-radius: var(--r-blob);
+  box-shadow: var(--s-xl);
+}
+
+/* ==========================================================================
+   12. FOOTER
+   ========================================================================== */
+
+.footer {
+  padding-block: clamp(3rem, 2rem + 3vw, 4.5rem) var(--sp-6);
+  background: var(--c-azul-900);
+  color: var(--c-texto-inv-suave);
+  font-size: var(--t-sm);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: clamp(2rem, 1.2rem + 3vw, 3.5rem);
+}
+
+.footer__marca .logo {
+  margin-bottom: var(--sp-4);
+}
+
+.footer__desc {
+  max-width: 30ch;
+  line-height: var(--lh-texto);
+}
+
+.footer__titulo {
+  margin-bottom: var(--sp-4);
+  font-family: var(--f-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-blanco);
+}
+
+.footer__lista {
+  display: grid;
+  gap: var(--sp-3);
+  list-style: none;
+}
+
+.footer__lista a {
+  text-decoration: none;
+  transition: color var(--d-rapida) var(--e-suave);
+}
+
+.footer__lista a:hover {
+  color: var(--c-rosa-claro);
+}
+
+.footer__base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-top: clamp(2.5rem, 1.8rem + 2vw, 3.5rem);
+  padding-top: var(--sp-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: var(--t-xs);
+}
+
+/* ==========================================================================
+   13. BOTÓN FLOTANTE MÓVIL (CTA siempre a la vista)
+   ========================================================================== */
+
+.cta-flotante {
+  position: fixed;
+  left: var(--padding-lateral);
+  right: var(--padding-lateral);
+  bottom: 1rem;
+  z-index: var(--z-sticky);
+  display: none;
+  transform: translateY(140%);
+  transition: transform var(--d-media) var(--e-suave);
+}
+
+.cta-flotante--visible {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   14. RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero__inner,
+  .historia__inner,
+  .cierre__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__inner,
+  .cierre__inner {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .hero__texto { margin-inline: auto; }
+  .hero__acciones,
+  .cierre__acciones,
+  .hero__prueba { justify-content: center; }
+
+  .hero__media { order: -1; width: min(100%, 400px); }
+  .historia__media { order: -1; }
+
+  .enc--izq { text-align: center; margin-inline: auto; }
+
+  .footer__inner { grid-template-columns: 1fr 1fr; }
+  .footer__marca { grid-column: 1 / -1; }
+}
+
+@media (max-width: 860px) {
+  .hamburguesa { display: block; }
+
+  /* Panel de navegación móvil */
+  .nav {
+    position: fixed;
+    inset: var(--header-alto) 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--sp-5) var(--padding-lateral) var(--sp-6);
+    background: var(--c-azul);
+    box-shadow: var(--s-lg);
+    transform: translateY(-120%);
+    visibility: hidden;
+    transition: transform var(--d-media) var(--e-suave),
+      visibility var(--d-media) var(--e-suave);
+  }
+
+  .nav--abierta {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .nav__enlace {
+    padding-block: var(--sp-4);
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav__enlace::after { display: none; }
+
+  .nav .btn {
+    margin-top: var(--sp-5);
+    width: 100%;
+  }
+
+  /* El CTA del header se muda al panel móvil */
+  .header__cta { display: none; }
+  .nav > .btn { display: inline-flex; }
+
+  .cta-flotante { display: block; }
+
+  /* Espacio para que el CTA flotante no tape el footer */
+  .footer { padding-bottom: 6rem; }
+}
+
+@media (max-width: 560px) {
+  .hero { min-height: auto; }
+
+  .hero__pastilla--envio { left: -2%; bottom: 11%; }
+  .hero__pastilla--fresco { display: none; }
+
+  .hero__acciones .btn,
+  .cierre__acciones .btn {
+    width: 100%;
+  }
+
+  .hero__resalte { white-space: normal; }
+
+  .footer__inner { grid-template-columns: 1fr; }
+  .footer__base { justify-content: center; text-align: center; }
+}
+
+/* ==========================================================================
+   15. SCROLL REVEAL
+   Estado inicial de los elementos con [data-reveal]. animations.js les añade
+   .es-visible cuando entran en pantalla. El retraso en cascada se controla
+   con la variable --retraso que inyecta el propio script.
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s var(--e-suave) var(--retraso, 0ms),
+    transform 0.7s var(--e-suave) var(--retraso, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="izq"] { transform: translateX(-32px); }
+[data-reveal="der"] { transform: translateX(32px); }
+[data-reveal="zoom"] { transform: scale(0.94); }
+
+[data-reveal].es-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Sin JS o con movimiento reducido: todo visible desde el inicio */
+.sin-js [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   16. IMPRESIÓN
+   ========================================================================== */
+
+@media print {
+  .header, .cta-flotante, .hero__forma-rosa, .blob { display: none !important; }
+  body { color: #000; background: #fff; }
+}

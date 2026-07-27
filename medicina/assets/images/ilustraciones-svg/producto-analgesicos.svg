@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Blíster de tabletas para alivio del dolor de venta libre">
+  <defs>
+    <linearGradient id="pa-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2f7"/><stop offset="1" stop-color="#ffe4ef"/></linearGradient>
+    <linearGradient id="pa-m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3d8a"/><stop offset="1" stop-color="#dd1766"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#pa-b)"/>
+  <circle cx="668" cy="86" r="150" fill="url(#pa-m)" opacity=".16"/>
+  <g transform="translate(196 132) rotate(-8 204 168)">
+    <rect x="0" y="0" width="408" height="336" rx="34" fill="#ffffff" stroke="#2b2a4a" stroke-opacity=".08" stroke-width="3"/>
+    <g fill="url(#pa-m)" opacity=".9">
+      <circle cx="98" cy="92" r="42"/><circle cx="204" cy="92" r="42"/><circle cx="310" cy="92" r="42"/>
+      <circle cx="98" cy="204" r="42"/><circle cx="204" cy="204" r="42"/><circle cx="310" cy="204" r="42"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="5" stroke-opacity=".75">
+      <path d="M98 68v48M204 68v48M310 68v48M98 180v48M204 180v48M310 180v48"/>
+    </g>
+    <rect x="54" y="278" width="300" height="16" rx="8" fill="#2b2a4a" opacity=".08"/>
+  </g>
+  <g transform="skewX(-20)"><rect x="628" y="392" width="56" height="240" rx="6" fill="#dd1766"/></g>
+</svg>

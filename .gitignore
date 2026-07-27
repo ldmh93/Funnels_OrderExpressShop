@@ -1,0 +1,17 @@
+# Material fuente: pesado y no hace falta desplegarlo.
+# Vive local (y respaldado por OneDrive), no en el repo.
+fotos productos/
+recursos ejemplo/
+loos Order express  Opm Shop/
+
+# Vercel
+.vercel
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

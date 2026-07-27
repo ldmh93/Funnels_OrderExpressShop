@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Sobres de electrolitos y suero de rehidratación oral">
+  <defs>
+    <linearGradient id="pd-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2f7"/><stop offset="1" stop-color="#ffe4ef"/></linearGradient>
+    <linearGradient id="pd-m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3d8a"/><stop offset="1" stop-color="#dd1766"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#pd-b)"/>
+  <path d="M800 0v300C660 286 566 190 580 74c3-27 9-52 18-74Z" fill="url(#pd-m)" opacity=".16"/>
+  <g transform="translate(146 150) rotate(-6 150 150)">
+    <rect x="0" y="0" width="300" height="300" rx="26" fill="#ffffff" stroke="#2b2a4a" stroke-opacity=".08" stroke-width="3"/>
+    <rect x="0" y="0" width="300" height="86" rx="26" fill="url(#pd-m)"/>
+    <rect x="40" y="130" width="220" height="16" rx="8" fill="#2b2a4a" opacity=".1"/>
+    <rect x="40" y="166" width="160" height="16" rx="8" fill="#2b2a4a" opacity=".08"/>
+    <path d="M150 210c34 30 54 52 54 74a54 54 0 1 1-108 0c0-22 20-44 54-74Z" fill="url(#pd-m)" opacity=".85"/>
+  </g>
+  <g transform="translate(452 214)">
+    <path d="M18 0h204l-24 262a44 44 0 0 1-44 40H86a44 44 0 0 1-44-40Z" fill="#ffffff" stroke="#2b2a4a" stroke-opacity=".08" stroke-width="3"/>
+    <path d="M34 156h172l-14 106a44 44 0 0 1-44 40H92a44 44 0 0 1-44-40Z" fill="url(#pd-m)" opacity=".8"/>
+  </g>
+  <g transform="skewX(-20)"><rect x="676" y="420" width="52" height="220" rx="6" fill="#dd1766"/></g>
+</svg>

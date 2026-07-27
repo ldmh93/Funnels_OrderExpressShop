@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- OEM Shop · Alegrías (barra de amaranto con miel) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Alegrías: barra de amaranto con miel">
+  <defs>
+    <radialGradient id="al-bg" cx="34%" cy="24%" r="84%">
+      <stop offset="0" stop-color="#FBF4ED"/><stop offset="1" stop-color="#E2C9B7"/>
+    </radialGradient>
+    <linearGradient id="al-face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8B667"/><stop offset="1" stop-color="#C88B34"/>
+    </linearGradient>
+    <pattern id="al-seed" width="13" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.5" fill="#F6DFA8"/>
+      <circle cx="9.5" cy="7" r="2.3" fill="#E7C078"/>
+      <circle cx="4" cy="10" r="2.2" fill="#FBEBC6"/>
+      <circle cx="11" cy="12" r="1.8" fill="#D5A254"/>
+    </pattern>
+    <pattern id="al-seed-dark" width="13" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.4" fill="#C18B3D"/>
+      <circle cx="9.5" cy="7" r="2.2" fill="#A97328"/>
+      <circle cx="4" cy="10" r="2.1" fill="#CE9A4B"/>
+    </pattern>
+  </defs>
+
+  <circle cx="160" cy="160" r="152" fill="url(#al-bg)"/>
+  <ellipse cx="160" cy="252" rx="106" ry="19" fill="#262858" opacity=".13"/>
+
+  <!-- Barra recargada al fondo -->
+  <g transform="rotate(-24 205 132)">
+    <rect x="130" y="98" width="150" height="66" rx="10" fill="#B47D2E"/>
+    <rect x="130" y="98" width="150" height="58" rx="10" fill="url(#al-face)"/>
+    <rect x="130" y="98" width="150" height="58" rx="10" fill="url(#al-seed)"/>
+    <rect x="130" y="98" width="150" height="58" rx="10" fill="none" stroke="#A97328" stroke-width="2" opacity=".4"/>
+  </g>
+
+  <!-- Barra principal al frente -->
+  <g transform="rotate(-7 158 200)">
+    <!-- canto inferior -->
+    <path d="M46 214h224v22a10 10 0 0 1-10 10H56a10 10 0 0 1-10-10z" fill="#A97328"/>
+    <rect x="46" y="214" width="224" height="14" fill="url(#al-seed-dark)" opacity=".85"/>
+    <!-- cara frontal -->
+    <rect x="46" y="160" width="224" height="56" rx="9" fill="url(#al-face)"/>
+    <rect x="46" y="160" width="224" height="56" rx="9" fill="url(#al-seed)"/>
+    <rect x="46" y="160" width="224" height="56" rx="9" fill="none" stroke="#A97328" stroke-width="2.5" opacity=".45"/>
+    <!-- brillo de miel -->
+    <path d="M62 172c34-6 78-8 116-5" fill="none" stroke="#FFF6DF" stroke-width="7" stroke-linecap="round" opacity=".5"/>
+  </g>
+
+  <!-- Trozo suelto -->
+  <g transform="rotate(14 96 116)">
+    <rect x="62" y="92" width="68" height="48" rx="8" fill="#B47D2E"/>
+    <rect x="62" y="92" width="68" height="40" rx="8" fill="url(#al-face)"/>
+    <rect x="62" y="92" width="68" height="40" rx="8" fill="url(#al-seed)"/>
+  </g>
+</svg>

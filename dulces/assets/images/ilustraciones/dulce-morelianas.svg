@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- OEM Shop · Morelianas (obleas caramelizadas con cajeta) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Morelianas: obleas caramelizadas con cajeta">
+  <defs>
+    <radialGradient id="mo-bg" cx="34%" cy="24%" r="84%">
+      <stop offset="0" stop-color="#FBF4ED"/><stop offset="1" stop-color="#E2C9B7"/>
+    </radialGradient>
+    <linearGradient id="mo-face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2BE6B"/><stop offset="1" stop-color="#D28F36"/>
+    </linearGradient>
+    <linearGradient id="mo-side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C57C29"/><stop offset="1" stop-color="#9E5B18"/>
+    </linearGradient>
+    <linearGradient id="mo-cajeta" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A2591C"/><stop offset="1" stop-color="#7A3F0F"/>
+    </linearGradient>
+    <linearGradient id="mo-lean" x1=".15" y1="0" x2=".85" y2="1">
+      <stop offset="0" stop-color="#F6CE85"/><stop offset="1" stop-color="#CB8329"/>
+    </linearGradient>
+    <pattern id="mo-grain" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.6" fill="#7A3F0F" opacity=".22"/>
+      <circle cx="12" cy="9" r="1.1" fill="#7A3F0F" opacity=".16"/>
+      <circle cx="7" cy="13" r="1.4" fill="#FFF1DA" opacity=".3"/>
+    </pattern>
+  </defs>
+
+  <circle cx="160" cy="160" r="152" fill="url(#mo-bg)"/>
+  <ellipse cx="160" cy="248" rx="106" ry="20" fill="#262858" opacity=".13"/>
+
+  <!-- Oblea recargada al fondo -->
+  <g transform="rotate(-18 218 138)">
+    <circle cx="218" cy="138" r="70" fill="url(#mo-lean)"/>
+    <circle cx="218" cy="138" r="70" fill="url(#mo-grain)"/>
+    <circle cx="218" cy="138" r="70" fill="none" stroke="#B0701D" stroke-width="3" opacity=".5"/>
+    <circle cx="218" cy="138" r="54" fill="none" stroke="#A96A1B" stroke-width="2" opacity=".35"/>
+    <path d="M180 106a70 70 0 0 1 44-24" fill="none" stroke="#FFF0D5" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+  </g>
+
+  <!-- Pila frontal: oblea + cajeta + oblea -->
+  <g>
+    <!-- oblea inferior -->
+    <rect x="70" y="198" width="176" height="20" fill="url(#mo-side)"/>
+    <ellipse cx="158" cy="218" rx="88" ry="24" fill="url(#mo-side)"/>
+    <ellipse cx="158" cy="198" rx="88" ry="24" fill="url(#mo-face)"/>
+    <ellipse cx="158" cy="198" rx="88" ry="24" fill="url(#mo-grain)"/>
+    <!-- capa de cajeta -->
+    <rect x="72" y="180" width="172" height="18" fill="url(#mo-cajeta)"/>
+    <ellipse cx="158" cy="180" rx="86" ry="23" fill="#8B4712"/>
+    <!-- escurrido de cajeta -->
+    <path d="M84 188c2 12 4 20 9 22s7-9 6-20zM206 190c1 14 5 22 10 21s6-11 3-22z" fill="#7A3F0F" opacity=".9"/>
+    <!-- oblea superior -->
+    <rect x="72" y="156" width="172" height="24" fill="url(#mo-side)"/>
+    <ellipse cx="158" cy="180" rx="86" ry="23" fill="url(#mo-side)" opacity=".01"/>
+    <ellipse cx="158" cy="156" rx="86" ry="23" fill="url(#mo-face)"/>
+    <ellipse cx="158" cy="156" rx="86" ry="23" fill="url(#mo-grain)"/>
+    <ellipse cx="158" cy="156" rx="86" ry="23" fill="none" stroke="#B0701D" stroke-width="2" opacity=".4"/>
+    <ellipse cx="158" cy="156" rx="62" ry="16" fill="none" stroke="#B0701D" stroke-width="2" opacity=".3"/>
+    <path d="M108 148c14-8 34-11 52-9" fill="none" stroke="#FFF3DC" stroke-width="7" stroke-linecap="round" opacity=".5"/>
+  </g>
+</svg>

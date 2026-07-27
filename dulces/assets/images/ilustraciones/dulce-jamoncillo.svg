@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- OEM Shop · Jamoncillo / dulce de leche con nuez -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Jamoncillo de leche con nuez">
+  <defs>
+    <radialGradient id="ja-bg" cx="34%" cy="24%" r="84%">
+      <stop offset="0" stop-color="#FBF4ED"/><stop offset="1" stop-color="#E2C9B7"/>
+    </radialGradient>
+    <linearGradient id="ja-face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7CBB0"/><stop offset=".6" stop-color="#D3AF90"/><stop offset="1" stop-color="#B98F6D"/>
+    </linearGradient>
+    <linearGradient id="ja-top" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#F6E3CE"/><stop offset="1" stop-color="#DDBF9F"/>
+    </linearGradient>
+    <linearGradient id="ja-crumb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C9A483"/><stop offset="1" stop-color="#A87F5C"/>
+    </linearGradient>
+    <pattern id="ja-grain" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="2.5" cy="3" r="1.5" fill="#8A6244" opacity=".4"/>
+      <circle cx="8" cy="7" r="1.2" fill="#8A6244" opacity=".3"/>
+      <circle cx="5" cy="9.5" r="1.3" fill="#FFF7EC" opacity=".55"/>
+      <circle cx="9.5" cy="1.5" r="1" fill="#FFF7EC" opacity=".4"/>
+      <circle cx="1" cy="7.5" r=".9" fill="#6F4A2E" opacity=".25"/>
+    </pattern>
+  </defs>
+
+  <circle cx="160" cy="160" r="152" fill="url(#ja-bg)"/>
+  <ellipse cx="160" cy="250" rx="104" ry="20" fill="#262858" opacity=".13"/>
+
+  <!-- ── Trozo recargado al fondo ── -->
+  <g transform="rotate(11 240 152)">
+    <path d="M206 118h72a8 8 0 0 1 8 8v72a8 8 0 0 1-8 8h-72a8 8 0 0 1-8-8v-72a8 8 0 0 1 8-8z" fill="url(#ja-crumb)"/>
+    <path d="M206 110h72a8 8 0 0 1 8 8v72a8 8 0 0 1-8 8h-72a8 8 0 0 1-8-8v-72a8 8 0 0 1 8-8z" fill="url(#ja-face)"/>
+    <path d="M206 110h72a8 8 0 0 1 8 8v72a8 8 0 0 1-8 8h-72a8 8 0 0 1-8-8v-72a8 8 0 0 1 8-8z" fill="url(#ja-grain)"/>
+  </g>
+
+  <!-- ── Bloque principal ── -->
+  <g transform="rotate(-4 132 186)">
+    <!-- canto inferior (miga) -->
+    <path d="M40 200h184v34a12 12 0 0 1-12 12H52a12 12 0 0 1-12-12z" fill="url(#ja-crumb)"/>
+    <path d="M40 200h184v34a12 12 0 0 1-12 12H52a12 12 0 0 1-12-12z" fill="url(#ja-grain)" opacity=".75"/>
+    <!-- cara frontal -->
+    <path d="M52 128h160a12 12 0 0 1 12 12v66H40v-66a12 12 0 0 1 12-12z" fill="url(#ja-face)"/>
+    <path d="M52 128h160a12 12 0 0 1 12 12v66H40v-66a12 12 0 0 1 12-12z" fill="url(#ja-grain)"/>
+    <!-- cara superior con orilla desmoronada -->
+    <path d="M40 140c14-6 24 4 38-1s20-10 34-6 18 9 32 5 22-9 34-4 20 8 34 4v6H40z" fill="url(#ja-top)"/>
+    <path d="M40 140c14-6 24 4 38-1s20-10 34-6 18 9 32 5 22-9 34-4 20 8 34 4" fill="none" stroke="#FFF9F1" stroke-width="3" opacity=".7"/>
+    <!-- migajas sueltas -->
+    <g fill="#C9A483">
+      <circle cx="34" cy="216" r="4"/><circle cx="230" cy="228" r="5"/><circle cx="26" cy="234" r="3"/>
+    </g>
+  </g>
+
+  <!-- ── Mitad de nuez encima ── -->
+  <g transform="rotate(-10 128 122)">
+    <ellipse cx="128" cy="126" rx="36" ry="27" fill="#9C6435"/>
+    <ellipse cx="128" cy="122" rx="36" ry="27" fill="#CB9257"/>
+    <path d="M128 95v54" stroke="#8B5427" stroke-width="3.4" stroke-linecap="round" opacity=".85"/>
+    <g fill="none" stroke="#8B5427" stroke-width="3" stroke-linecap="round" opacity=".7">
+      <path d="M110 100c-6 8-4 18 2 24s6 16 1 22M146 100c6 8 4 18-2 24s-6 16-1 22"/>
+      <path d="M97 112c8 2 13 7 14 14M159 112c-8 2-13 7-14 14"/>
+    </g>
+    <ellipse cx="117" cy="109" rx="12" ry="7" fill="#E8BC8C" opacity=".6" transform="rotate(-18 117 109)"/>
+  </g>
+</svg>
